@@ -1281,7 +1281,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
    
    .footer-section {
      width: 100%;
-     background-color: #181D58;
+     background-color: #090c34;
    }
    
    .footer-heading-wrapper {
@@ -2400,7 +2400,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
    
    .sub-footer-text {
      font-family: Plusjakartadisplay, sans-serif;
-     color: #8a95ad;
+     color: #bcbcbc;
      font-size: 16px;
      line-height: 140%;
      font-weight: 400;
@@ -2517,7 +2517,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
    }
    
    .email-text {
-     color: #5c5c5c;
+     color: #bcbcbc;
      font-size: 20px;
      line-height: 36px;
      font-weight: 700;
@@ -2897,7 +2897,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
      -webkit-justify-content: center;
      -ms-flex-pack: center;
      justify-content: center;
-     background-color: #000;
+     background-color: #090c34;
    }
    
    .blog-card-wrapper {
