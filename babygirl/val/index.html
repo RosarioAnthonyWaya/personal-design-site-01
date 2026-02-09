@@ -206,7 +206,7 @@
         <button class="btn no" id="noBtn" aria-label="No (good luck catching it)">No</button>
       </div>
 
-      <div class="hint" id="hint">“No” seems a bit shy 😈</div>
+      <div class="hint" id="hint">Click "No" if you really get mind 😈</div>
     </div>
   </div>
 
@@ -215,10 +215,10 @@
   <script>
     // ----- Quick config -----
     // Change the name here:
-    const PERSON_NAME = "nirali";
+    const PERSON_NAME = "Sami baby";
 
     // How close the pointer can get before "No" runs away (in pixels)
-    const DODGE_RADIUS = 90;
+    const DODGE_RADIUS = 40;
 
     // Extra spacing from stage edges so the button doesn't clip
     const EDGE_PADDING = 8;
@@ -322,7 +322,7 @@
       // Optional: replace card content after yes
       setTimeout(() => {
         document.querySelector("h1").textContent = "Deal sealed 💍💖";
-        document.getElementById("hint").textContent = "Now go and act like you meant it 😄";
+        document.getElementById("hint").textContent = "Now go and buy my val gift 😄";
         noBtn.style.display = "none";
         yesBtn.textContent = "Aww 😭";
       }, 500);
