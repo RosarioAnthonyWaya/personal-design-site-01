@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Speaking — Anthony Waya</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.speak-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.topics-list{display:flex;flex-direction:column;gap:0;
+  border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:2.5rem}
+.topic-item{
+  padding:1.35rem 1.5rem;background:var(--white);
+  border-bottom:1px solid var(--border);transition:background .18s;
+}
+.topic-item:last-child{border-bottom:none}
+.topic-item:hover{background:var(--teal-p)}
+.topic-n{
+  font-family:'Fraunces',serif;font-size:.75rem;font-weight:700;
+  color:var(--ochre);margin-bottom:.35rem;
+}
+.topic-title{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.25rem;line-height:1.3}
+.topic-sub{font-size:.78rem;color:var(--muted)}
+
+.formats{margin-top:2rem}
+.formats-lbl{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
+.format-pills{display:flex;flex-wrap:wrap;gap:.4rem}
+.fmt{font-size:.75rem;font-weight:600;color:var(--teal);background:var(--teal-p);border-radius:100px;padding:.28rem .85rem}
+
+.speak-right{}
+.speak-card{
+  background:var(--teal);border-radius:16px;padding:2.25rem;
+  color:#fff;margin-bottom:1.25rem;position:relative;overflow:hidden;
+}
+.speak-card::after{
+  content:'';position:absolute;bottom:-2rem;right:-2rem;
+  width:140px;height:140px;border-radius:50%;
+  background:rgba(255,255,255,.04);
+}
+.speak-card-title{
+  font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;
+  color:#fff;margin-bottom:.75rem;line-height:1.2;
+}
+.speak-card-desc{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.65);margin-bottom:1.75rem}
+.speak-card-cta{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--ochre);color:#fff;
+  border-radius:100px;padding:.75rem 1.6rem;
+  font-weight:600;font-size:.85rem;text-decoration:none;transition:all .2s;
+}
+.speak-card-cta:hover{background:#a86d1e}
+
+.kit-strip{
+  background:var(--teal-p);border:1px solid var(--border-m);
+  border-radius:14px;padding:1.35rem;
+  display:flex;align-items:center;gap:1.1rem;
+}
+.kit-info h4{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:.2rem}
+.kit-info p{font-size:.78rem;color:var(--muted)}
+.kit-btn{
+  margin-left:auto;background:var(--teal);color:#fff;
+  border-radius:100px;padding:.45rem 1.1rem;
+  font-size:.76rem;font-weight:700;text-decoration:none;
+  transition:all .2s;white-space:nowrap;
+}
+.kit-btn:hover{background:var(--teal-d)}
+
+@media(max-width:900px){
+  .speak-layout{grid-template-columns:1fr;gap:3rem}
+}
+</style>
+</head>
+<body>
+<script src="shared.js"></script>
+
+<div class="page-header">
+  <span class="eyebrow">Speaking</span>
+  <h1 class="page-title">Ideas worth <em>a stage</em></h1>
+  <p class="page-sub">Anthony speaks at the intersection of business growth, design thinking, and African entrepreneurship. Sharp perspective. Not a slide deck performance.</p>
+</div>
+
+<section class="section section-white">
+  <div class="speak-layout r">
+    <div>
+      <span class="eyebrow">Signature topics</span>
+      <p class="page-sub" style="margin-bottom:0;max-width:440px">Anthony speaks from direct experience — not borrowed frameworks. Every topic is grounded in real work across Nigerian and African markets.</p>
+      <div class="topics-list">
+        <div class="topic-item">
+          <div class="topic-n">01</div>
+          <div class="topic-title">Why Nigerian businesses fail at customer experience</div>
+          <div class="topic-sub">The real reasons — and the framework to fix it from the inside</div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-n">02</div>
+          <div class="topic-title">Design thinking as a business growth tool for SMEs</div>
+          <div class="topic-sub">Practical, not theoretical. With real examples from African markets</div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-n">03</div>
+          <div class="topic-title">From idea to impact: building businesses that grow</div>
+          <div class="topic-sub">The systems behind sustainable African business performance</div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-n">04</div>
+          <div class="topic-title">The fintech explosion in Nigeria</div>
+          <div class="topic-sub">What it means for traditional business owners trying to compete</div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-n">05</div>
+          <div class="topic-title">CX Design and regulatory compliance in Nigeria</div>
+          <div class="topic-sub">Using customer experience to navigate friction and build trust</div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-n">06</div>
+          <div class="topic-title">Physics, design, and the art of solving business problems</div>
+          <div class="topic-sub">A different way of thinking about what's actually wrong</div>
+        </div>
+      </div>
+      <div class="formats">
+        <div class="formats-lbl">Available as</div>
+        <div class="format-pills">
+          <span class="fmt">Keynote</span>
+          <span class="fmt">Panel</span>
+          <span class="fmt">Masterclass</span>
+          <span class="fmt">Workshop</span>
+          <span class="fmt">Corporate Training</span>
+          <span class="fmt">Podcast Guest</span>
+        </div>
+      </div>
+    </div>
+    <div class="speak-right">
+      <div class="speak-card">
+        <div class="speak-card-title">Book Anthony for your next event</div>
+        <p class="speak-card-desc">Available for startup summits, corporate conferences, university entrepreneurship weeks, accelerator demo days, and government forums. In-person and virtual, across Nigeria, the UK, and internationally. Anthony brings a perspective most audiences haven't heard before — commercially grounded, culturally specific, and practically useful.</p>
+        <a href="mailto:hello@rosarioanthony.com?subject=Speaking%20Enquiry" class="speak-card-cta">Make a speaking enquiry →</a>
+      </div>
+      <div class="kit-strip">
+        <div style="font-size:2rem">📄</div>
+        <div class="kit-info">
+          <h4>Speaker Kit</h4>
+          <p>Bio, photo, topics & technical requirements — ready for your event team to use directly.</p>
+        </div>
+        <a href="mailto:hello@rosarioanthony.com?subject=Speaker%20Kit%20Request" class="kit-btn">Request Kit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ANTHONY ON STAGE -->
+<section class="section section-ink">
+  <span class="eyebrow eyebrow-light">Why book Anthony</span>
+  <h2 class="page-title page-title-light" style="margin-bottom:2.5rem">What audiences <em>actually get</em></h2>
+  <div class="card-grid card-grid-3 r">
+    <div class="gc gc-ink">
+      <div style="font-size:.7rem;font-weight:700;color:rgba(255,255,255,.2);letter-spacing:.06em;margin-bottom:1rem">01</div>
+      <div style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.65rem">Commercially grounded</div>
+      <div style="font-size:.84rem;line-height:1.7;color:rgba(255,255,255,.55)">Anthony doesn't speak in theory. Every point connects back to business outcomes — revenue, retention, efficiency. Audiences leave with tools, not just inspiration.</div>
+    </div>
+    <div class="gc gc-ink">
+      <div style="font-size:.7rem;font-weight:700;color:rgba(255,255,255,.2);letter-spacing:.06em;margin-bottom:1rem">02</div>
+      <div style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.65rem">Market-specific perspective</div>
+      <div style="font-size:.84rem;line-height:1.7;color:rgba(255,255,255,.55)">His experience across Nigeria, the UK, and Equatorial Guinea gives Anthony a perspective on African business that most speakers can't offer — lived, not researched from the outside.</div>
+    </div>
+    <div class="gc gc-ink">
+      <div style="font-size:.7rem;font-weight:700;color:rgba(255,255,255,.2);letter-spacing:.06em;margin-bottom:1rem">03</div>
+      <div style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.65rem">Easy to brief and book</div>
+      <div style="font-size:.84rem;line-height:1.7;color:rgba(255,255,255,.55)">Clear topics, a downloadable speaker kit, and direct communication. Anthony makes the organiser's job straightforward — from first enquiry to post-event follow-up.</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-strip">
+  <h2 class="page-title page-title-light">Ready to book?</h2>
+  <p class="page-sub page-sub-light">Send an enquiry and Anthony will respond directly. Usually within 48 hours.</p>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap" class="r">
+    <a href="mailto:hello@rosarioanthony.com?subject=Speaking%20Enquiry" class="btn btn-ochre">Make a speaking enquiry</a>
+    <a href="mailto:hello@rosarioanthony.com?subject=Speaker%20Kit%20Request" class="btn btn-outline-light">Request speaker kit</a>
+  </div>
+  <p class="contact-note" style="margin-top:1.5rem">Or email: <a href="mailto:hello@rosarioanthony.com">hello@rosarioanthony.com</a></p>
+</section>
+</body>
+</html>
