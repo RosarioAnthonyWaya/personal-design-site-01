@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rosario Anthony — Growth Strategist · Systems Builder</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#0B1F1F;--ink-d:#071515;
+  --teal:#0B4F4F;--teal-m:#0E6B6B;--teal-l:#17999A;--teal-p:#D6ECEC;
+  --cream:#F0EBE1;--cream-d:#E4DDD0;
+  --ochre:#C8872A;--ochre-l:#DFA84E;
+  --muted:rgba(240,235,225,0.48);
+  --border:rgba(240,235,225,0.1);--border-m:rgba(240,235,225,0.18);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+h1,h2,h3{font-family:'DM Serif Display',serif;line-height:1.05;letter-spacing:-.01em}
+em{font-style:italic}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;transition:all .4s}
+nav.solid{background:rgba(7,21,21,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:1rem 3rem}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--cream);letter-spacing:.02em}
+.nav-logo em{color:var(--ochre-l);font-style:italic}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.72rem;font-weight:500;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--cream)}
+.nav-cta{font-size:.72rem;font-weight:600;color:var(--ink);background:var(--cream);padding:.55rem 1.5rem;letter-spacing:.06em;text-transform:uppercase;transition:all .2s}
+.nav-cta:hover{background:var(--ochre-l);color:#fff}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.35rem}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--cream);border-radius:1px;transition:all .3s}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--ink-d);z-index:199;padding:6rem 2.5rem 3rem;flex-direction:column}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'DM Serif Display',serif;font-size:2.75rem;font-weight:300;color:var(--cream);padding:.6rem 0;border-bottom:1px solid var(--border);display:block;transition:color .2s}
+.mobile-menu a:hover{color:var(--ochre-l)}
+.mob-cta{margin-top:2rem;font-size:.8rem!important;font-family:'DM Sans',sans-serif!important;font-weight:600!important;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-l)!important;border-bottom:none!important}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:grid;grid-template-columns:55% 45%}
+.hero-img-col{position:relative;overflow:hidden}
+.hero-img-col img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.hero-img-col::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--ink) 0%,rgba(11,31,31,.3) 60%,transparent 100%),linear-gradient(to top,var(--ink) 0%,transparent 40%)}
+.hero-text-col{display:flex;flex-direction:column;justify-content:flex-end;padding:8rem 3.5rem 4rem;border-left:1px solid var(--border)}
+.hero-tag{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ochre-l);margin-bottom:2rem;display:flex;align-items:center;gap:.75rem}
+.hero-tag::before{content:'';width:30px;height:1px;background:var(--ochre)}
+.hero-h1{font-size:clamp(3.5rem,5.5vw,5.5rem);font-weight:300;line-height:.95;color:var(--cream);margin-bottom:1.75rem}
+.hero-h1 em{display:block;color:var(--ochre-l)}
+.hero-sub{font-size:.9rem;line-height:1.85;color:var(--muted);max-width:380px;margin-bottom:2.75rem}
+.hero-btns{display:flex;flex-direction:column;gap:.75rem;align-items:flex-start}
+.btn-p{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--cream);padding:.85rem 2.25rem;transition:all .25s;display:inline-block}
+.btn-p:hover{background:var(--ochre-l);color:#fff}
+.btn-g{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);border:1px solid var(--border-m);padding:.85rem 2.25rem;transition:all .25s;display:inline-block}
+.btn-g:hover{border-color:var(--cream)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:3rem;display:flex;align-items:center;gap:.75rem;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero-scroll-line{width:40px;height:1px;background:var(--muted);animation:linebreath 2s ease-in-out infinite}
+@keyframes linebreath{0%,100%{width:40px;opacity:.4}50%{width:65px;opacity:1}}
+
+/* ROUTING CARDS */
+#routing{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border)}
+.rc{position:relative;overflow:hidden;aspect-ratio:3/4;display:flex;flex-direction:column;justify-content:flex-end;padding:2.25rem 2rem;border-right:1px solid var(--border);text-decoration:none}
+.rc:last-child{border-right:none}
+.rc-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.4,0,.2,1),filter .4s;filter:brightness(.38)}
+.rc:hover .rc-bg{transform:scale(1.05);filter:brightness(.55)}
+.rc::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(7,21,21,.95) 0%,rgba(7,21,21,.2) 60%,transparent 100%)}
+.rc-n{position:relative;z-index:1;font-family:'DM Serif Display',serif;font-size:.85rem;color:var(--ochre-l);margin-bottom:auto;padding-top:.35rem;font-weight:400}
+.rc-aud{position:relative;z-index:1;font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre-l);margin-bottom:.5rem;opacity:.75}
+.rc-title{position:relative;z-index:1;font-family:'DM Serif Display',serif;font-size:1.7rem;font-weight:300;color:var(--cream);line-height:1.15;margin-bottom:.9rem}
+.rc-title em{color:var(--ochre-l)}
+.rc-arr{position:relative;z-index:1;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);opacity:.5;display:inline-flex;align-items:center;gap:.4rem;transition:all .2s}
+.rc:hover .rc-arr{opacity:1;gap:.7rem}
+
+/* INTRO */
+#intro{padding:6rem 3rem;border-bottom:1px solid var(--border)}
+.intro-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:6rem;align-items:center}
+.intro-eyebrow{font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ochre);margin-bottom:1.25rem}
+.intro-h{font-size:clamp(2.8rem,4.5vw,4.5rem);font-weight:300;color:var(--cream);line-height:1}
+.intro-h em{color:var(--ochre-l)}
+.intro-body{font-size:1rem;line-height:1.9;color:var(--muted);margin-bottom:2rem}
+.intro-body strong{color:var(--cream);font-weight:400}
+.text-link{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);display:inline-flex;align-items:center;gap:.55rem;border-bottom:1px solid var(--border-m);padding-bottom:.3rem;transition:all .2s}
+.text-link:hover{color:var(--ochre-l);border-color:var(--ochre);gap:.85rem}
+
+/* STATS */
+#stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border)}
+.stat-c{padding:3rem 2.5rem;border-right:1px solid var(--border);transition:background .2s}
+.stat-c:last-child{border-right:none}
+.stat-c:hover{background:rgba(240,235,225,.025)}
+.stat-n{font-family:'DM Serif Display',serif;font-size:3.75rem;font-weight:300;color:var(--cream);line-height:.9;letter-spacing:-.02em;margin-bottom:.5rem}
+.stat-n em{color:var(--ochre-l)}
+.stat-l{font-size:.75rem;color:var(--muted);line-height:1.55}
+
+/* ADVANTAGE */
+#advantage{padding:6rem 3rem;border-bottom:1px solid var(--border)}
+.adv-header{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end;margin-bottom:4.5rem}
+.adv-desc-col{font-size:.95rem;line-height:1.85;color:var(--muted);max-width:440px;align-self:end}
+.adv-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.adv-c{background:var(--ink);padding:2.75rem 2.25rem;transition:background .25s}
+.adv-c:hover{background:rgba(240,235,225,.03)}
+.adv-c-n{font-family:'DM Serif Display',serif;font-size:.9rem;color:var(--ochre-l);margin-bottom:1.5rem;font-weight:400}
+.adv-c-title{font-family:'DM Serif Display',serif;font-size:1.65rem;font-weight:300;color:var(--cream);margin-bottom:.85rem;line-height:1.15}
+.adv-c-title em{color:var(--ochre-l)}
+.adv-c-body{font-size:.875rem;line-height:1.78;color:var(--muted)}
+.adv-c-tag{display:inline-block;margin-top:1.5rem;font-size:.62rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ochre-l);opacity:.65}
+
+/* ECONOMIC */
+#economic{display:grid;grid-template-columns:repeat(4,1fr);background:var(--teal)}
+.ec-item{padding:3.5rem 2.25rem;border-right:1px solid rgba(255,255,255,.08);transition:background .2s}
+.ec-item:last-child{border-right:none}
+.ec-item:hover{background:rgba(255,255,255,.04)}
+.ec-arrow{font-size:1.6rem;color:var(--ochre-l);margin-bottom:1rem;display:block;line-height:1}
+.ec-metric{font-family:'DM Serif Display',serif;font-size:1.6rem;font-weight:300;color:var(--cream);margin-bottom:.5rem}
+.ec-body{font-size:.8rem;line-height:1.65;color:rgba(240,235,225,.48)}
+
+/* PROOF */
+#proof{padding:6rem 3rem;border-bottom:1px solid var(--border)}
+.proof-label{font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ochre);margin-bottom:4rem}
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.proof-frame{position:relative;overflow:hidden}
+.proof-frame img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.proof-pill{position:absolute;top:1.25rem;left:1.25rem;background:rgba(7,21,21,.8);backdrop-filter:blur(8px);color:var(--cream);border:1px solid var(--border-m);padding:.3rem 1rem;font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.proof-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(7,21,21,.92),transparent);padding:2rem 1.5rem}
+.pc-l{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre-l);margin-bottom:.3rem}
+.pc-t{font-size:.85rem;color:rgba(240,235,225,.75);line-height:1.5}
+.proof-client{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre);margin-bottom:1.25rem}
+.proof-h{font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;color:var(--cream);line-height:1.05;margin-bottom:1.5rem}
+.proof-h em{color:var(--ochre-l)}
+.proof-body{font-size:.95rem;line-height:1.85;color:var(--muted);margin-bottom:2rem}
+.proof-q{border-left:1px solid var(--ochre);padding:.85rem 1.5rem;margin-bottom:2rem}
+.pq-text{font-family:'DM Serif Display',serif;font-size:1.2rem;font-style:italic;color:var(--cream);line-height:1.65;margin-bottom:.55rem;font-weight:300}
+.pq-attr{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-l)}
+
+/* MEDIA STRIP */
+#media-strip{padding:5.5rem 0 5.5rem 3rem;border-bottom:1px solid var(--border);overflow:hidden}
+.ms-label{font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ochre);margin-bottom:2.5rem}
+.ms-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-right:3rem;cursor:grab}
+.ms-track::-webkit-scrollbar{display:none}
+.ms-item{flex-shrink:0;scroll-snap-align:start}
+.ms-img{width:270px;height:360px;object-fit:cover;filter:brightness(.75);transition:all .4s}
+.ms-item:hover .ms-img{filter:brightness(1)}
+.ms-cap{font-size:.67rem;color:var(--muted);margin-top:.65rem;letter-spacing:.04em}
+
+/* VIDEO */
+#video-section{padding:6rem 3rem;border-bottom:1px solid var(--border)}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.v-wrap{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:16/9}
+.v-wrap img{width:100%;height:100%;object-fit:cover;opacity:.5;transition:opacity .35s;display:block}
+.v-wrap:hover img{opacity:.7}
+.v-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem}
+.v-ring{width:72px;height:72px;border-radius:50%;border:1.5px solid rgba(240,235,225,.35);display:flex;align-items:center;justify-content:center;transition:all .25s}
+.v-wrap:hover .v-ring{border-color:var(--ochre-l);background:rgba(200,135,42,.12)}
+.v-tri{width:0;height:0;border-top:11px solid transparent;border-bottom:11px solid transparent;border-left:18px solid var(--cream);margin-left:4px}
+.v-label{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,235,225,.4)}
+
+/* TESTIMONIALS */
+#testimonials{padding:6rem 3rem;border-bottom:1px solid var(--border)}
+.testi-top{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end;margin-bottom:4rem}
+.testi-h{font-size:clamp(2.8rem,4.5vw,4.5rem);font-weight:300;color:var(--cream);line-height:1}
+.testi-h em{color:var(--ochre-l)}
+.testi-sub{font-size:.95rem;line-height:1.85;color:var(--muted);max-width:400px;align-self:end}
+.testi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.tc{background:var(--ink);padding:2.75rem 2.25rem;transition:background .2s}
+.tc:hover{background:rgba(240,235,225,.025)}
+.tq{font-family:'DM Serif Display',serif;font-size:4.5rem;color:var(--ochre-l);line-height:.55;margin-bottom:1rem;opacity:.22}
+.tt{font-family:'DM Serif Display',serif;font-size:1.1rem;font-style:italic;color:var(--cream);line-height:1.75;margin-bottom:1.75rem;font-weight:300}
+.tn{font-size:.8rem;font-weight:600;color:var(--cream)}
+.tr{font-size:.7rem;color:var(--muted);margin-top:.2rem}
+
+/* CONTACT */
+#contact{padding:6rem 3rem;background:var(--ink-d)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:start}
+.contact-h{font-size:clamp(3rem,5vw,5rem);font-weight:300;color:var(--cream);line-height:.95;margin-bottom:1.5rem}
+.contact-h em{color:var(--ochre-l)}
+.contact-sub{font-size:.95rem;color:var(--muted);line-height:1.85}
+.cp-list{display:flex;flex-direction:column}
+.cp{display:block;padding:1.75rem 1.5rem;border-bottom:1px solid var(--border);text-decoration:none;border-left:2px solid transparent;transition:all .2s}
+.cp:first-child{border-top:1px solid var(--border)}
+.cp:hover{background:rgba(240,235,225,.03);border-left-color:var(--ochre)}
+.cp-lbl{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:.4rem}
+.cp-title{font-family:'DM Serif Display',serif;font-size:1.3rem;font-weight:300;color:var(--cream);margin-bottom:.3rem}
+.cp-desc{font-size:.78rem;color:var(--muted)}
+.cp-arr{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-l);margin-top:.65rem;display:block;opacity:.6;transition:opacity .2s}
+.cp:hover .cp-arr{opacity:1}
+.contact-note{font-size:.72rem;color:var(--muted);margin-top:1.5rem;text-align:center}
+.contact-note a{color:var(--ochre-l)}
+
+/* FOOTER */
+footer{padding:4.5rem 3rem 3rem;border-top:1px solid var(--border);display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.75rem;font-weight:300;color:var(--cream);margin-bottom:.7rem}
+.footer-logo em{color:var(--ochre-l)}
+.footer-tagline{font-size:.78rem;color:var(--muted);line-height:1.65;max-width:250px}
+.footer-copy{font-size:.65rem;color:rgba(240,235,225,.18);margin-top:2.5rem}
+.fc-head{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:1.25rem}
+.fc-links{display:flex;flex-direction:column;gap:.6rem}
+.fc-links a{font-size:.8rem;color:var(--muted);transition:color .2s}
+.fc-links a:hover{color:var(--cream)}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.r.in{opacity:1;transform:none}
+.r1{transition-delay:.08s}.r2{transition-delay:.18s}.r3{transition-delay:.28s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  nav,.nav-links,.nav-cta{}.nav-links,.nav-cta{display:none!important}
+  .nav-hamburger{display:flex!important}
+  nav{padding:1rem 1.25rem}
+  nav.solid{padding:.85rem 1.25rem}
+  #hero{grid-template-columns:1fr}
+  .hero-img-col{min-height:100vh;position:absolute;inset:0}
+  .hero-text-col{position:relative;z-index:2;min-height:100vh;padding:7rem 1.5rem 4rem;border-left:none;background:linear-gradient(to right,rgba(7,21,21,.92),rgba(7,21,21,.6))}
+  #routing{grid-template-columns:1fr}
+  .rc{aspect-ratio:5/3;border-right:none;border-bottom:1px solid var(--border)}
+  #intro,#advantage,#proof,#video-section,#testimonials,#contact,#media-strip{padding-left:1.25rem;padding-right:1.25rem}
+  .intro-grid,.adv-header,.proof-grid,.video-grid,.contact-grid,.testi-top{grid-template-columns:1fr;gap:2.5rem}
+  #stats{grid-template-columns:1fr 1fr}
+  .stat-c{border-bottom:1px solid var(--border)}
+  #economic{grid-template-columns:1fr 1fr}
+  .adv-cards,.testi-row{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr 1fr;gap:2rem;padding:3rem 1.25rem 2rem}
+}
+@media(max-width:480px){
+  #stats{grid-template-columns:1fr}
+  #economic{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr}
+  #hero{position:relative;display:block}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Rosario<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="work/index.html">Work</a></li>
+    <li><a href="speaking/index.html">Speaking</a></li>
+    <li><a href="hire/index.html">Hire</a></li>
+    <li><a href="about/index.html">About</a></li>
+    <li><a href="blog/index.html">Ideas</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Work With Rosario</a>
+  <button class="nav-hamburger" id="hamburger" style="display:none"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-menu" id="mob-menu">
+  <a href="work/index.html">Work</a>
+  <a href="speaking/index.html">Speaking</a>
+  <a href="hire/index.html">Hire</a>
+  <a href="about/index.html">About</a>
+  <a href="blog/index.html">Ideas</a>
+  <a href="#contact" class="mob-cta">Work With Rosario →</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-img-col">
+    <img src="images/hero.jpg" alt="Rosario Anthony"/>
+  </div>
+  <div class="hero-text-col">
+    <div class="hero-tag">Nigeria · Equatorial Guinea · UK</div>
+    <h1 class="hero-h1">I find the leaks<br/>in your business.<br/><em>Then I fix them.</em></h1>
+    <p class="hero-sub">Growth strategist and systems builder working with founder-led businesses across Africa and the UK.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-p">Work With Rosario</a>
+      <a href="work/index.html" class="btn-g">See the Work</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- ── ROUTING ── -->
+<section id="routing">
+  <a href="#contact" class="rc">
+    <div class="rc-bg" style="background-image:url('images/about-preview.jpg')"></div>
+    <div class="rc-n">01</div>
+    <div class="rc-aud">Business Owners & Founders</div>
+    <div class="rc-title">Fix my <em>business</em></div>
+    <span class="rc-arr">Work With Rosario →</span>
+  </a>
+  <a href="speaking/index.html" class="rc">
+    <div class="rc-bg" style="background-image:url('images/speaking-stage.jpg')"></div>
+    <div class="rc-n">02</div>
+    <div class="rc-aud">Event Organisers</div>
+    <div class="rc-title">Book a <em>speaking</em> appearance</div>
+    <span class="rc-arr">View Speaking →</span>
+  </a>
+  <a href="hire/index.html" class="rc">
+    <div class="rc-bg" style="background-image:url('images/hire.jpg')"></div>
+    <div class="rc-n">03</div>
+    <div class="rc-aud">Employers · UK & Global</div>
+    <div class="rc-title">Hire Rosario <em>full-time</em></div>
+    <span class="rc-arr">View Profile →</span>
+  </a>
+</section>
+
+<!-- ── INTRO ── -->
+<section id="intro">
+  <div class="intro-grid r">
+    <div>
+      <div class="intro-eyebrow">About Rosario Anthony</div>
+      <h2 class="intro-h">Not one thing.<br/><em>Three things.</em></h2>
+    </div>
+    <div>
+      <p class="intro-body">First Class Physics graduate. TEDx speaker. Co-founder of two companies across two continents. Nearly a decade building businesses, brands, and systems across Africa and the UK. <strong>Most businesses don't fail because of bad products.</strong> They fail because of broken systems — in their brand, their operations, or how they treat their customers.</p>
+      <a href="about/index.html" class="text-link">Read Rosario's Story →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section id="stats">
+  <div class="stat-c r r1"><div class="stat-n">9<em>+</em></div><div class="stat-l">Years across strategy,<br/>design & operations</div></div>
+  <div class="stat-c r r2"><div class="stat-n">2</div><div class="stat-l">Companies co-founded<br/>across Africa & the UK</div></div>
+  <div class="stat-c r r3"><div class="stat-n">1<em>st</em></div><div class="stat-l">Class Physics Honours<br/>4.87 CGPA · Best Graduate</div></div>
+  <div class="stat-c r" style="transition-delay:.38s"><div class="stat-n">2<em>×</em></div><div class="stat-l">TEDx — speaker<br/>& curator</div></div>
+</section>
+
+<!-- ── ADVANTAGE ── -->
+<section id="advantage">
+  <div class="adv-header r">
+    <div>
+      <div class="intro-eyebrow">The Unfair Advantage</div>
+      <h2 class="intro-h" style="font-size:clamp(2.8rem,4.5vw,4.5rem)">Why Rosario is<br/><em>not interchangeable</em></h2>
+    </div>
+    <p class="adv-desc-col">Most professionals give you one thing. Rosario brings three compounding capabilities that change what's possible for your business — and they all work together.</p>
+  </div>
+  <div class="adv-cards r">
+    <div class="adv-c">
+      <div class="adv-c-n">01</div>
+      <div class="adv-c-title">The Scientist's <em>Eye</em></div>
+      <p class="adv-c-body">First Class Physics graduate. Rosario sees systems and root causes before symptoms — and diagnoses what is actually wrong before recommending anything.</p>
+      <span class="adv-c-tag">BSc Physics (First Class) · Southwestern University Nigeria</span>
+    </div>
+    <div class="adv-c">
+      <div class="adv-c-n">02</div>
+      <div class="adv-c-title">The Designer's <em>Mind</em></div>
+      <p class="adv-c-body">MIT UX-trained. Creator of S.E.E. Them™ and the 9-Touch Rule™. Rosario treats design as how customers experience a business — not as decoration.</p>
+      <span class="adv-c-tag">MIT UX Bootcamp · CX Framework Creator</span>
+    </div>
+    <div class="adv-c">
+      <div class="adv-c-n">03</div>
+      <div class="adv-c-title">The Commercial <em>Lens</em></div>
+      <p class="adv-c-body">Co-founder of Boltzmenn and Outhbox UK. TEDx speaker on business growth and African entrepreneurship. Every recommendation connects to revenue.</p>
+      <span class="adv-c-tag">Co-founder Boltzmenn & Outhbox UK</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── ECONOMIC ── -->
+<section id="economic">
+  <div class="ec-item r r1"><span class="ec-arrow">↑</span><div class="ec-metric">Revenue</div><p class="ec-body">Clearer positioning converts more demand into actual income.</p></div>
+  <div class="ec-item r r2"><span class="ec-arrow">↓</span><div class="ec-metric">Waste</div><p class="ec-body">Operational redesign removes friction and hidden loss.</p></div>
+  <div class="ec-item r r3"><span class="ec-arrow">↑</span><div class="ec-metric">Retention</div><p class="ec-body">Better customer experience generates more referrals.</p></div>
+  <div class="ec-item r" style="transition-delay:.38s"><span class="ec-arrow">↑</span><div class="ec-metric">Efficiency</div><p class="ec-body">Systems reduce founder firefighting. Growth becomes predictable.</p></div>
+</section>
+
+<!-- ── PROOF ── -->
+<section id="proof">
+  <div class="proof-label">Featured Work</div>
+  <div class="proof-grid r">
+    <div class="proof-frame">
+      <img src="https://framerusercontent.com/images/RC8eayLHnSqn1YzsZyNu7cyilZg.png" alt="Chop Chop by Nanyaa branding"/>
+      <span class="proof-pill">Branding & Packaging</span>
+      <div class="proof-caption">
+        <div class="pc-l">Outcome</div>
+        <div class="pc-t">Brand became the #1 conversation starter. Customers advocate before they're asked.</div>
+      </div>
+    </div>
+    <div>
+      <div class="proof-client">Chop Chop by Nanyaa · Nigeria</div>
+      <h2 class="proof-h">A brand that became<br/>the product's <em>best asset</em></h2>
+      <p class="proof-body">Great product. Brand that disappeared into the background. Rosario rebuilt the identity, packaging, and visual language — turning passive customers into active advocates.</p>
+      <div class="proof-q">
+        <p class="pq-text">"There's nobody that looks at our products now that doesn't first compliment the branding. I've never been a fan of yellow but guess who is repping it with pride?"</p>
+        <div class="pq-attr">— Nwaosa Joy, Founder · Chop Chop by Nanyaa</div>
+      </div>
+      <a href="work/index.html" class="text-link">See All Case Studies →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── MEDIA STRIP ── -->
+<section id="media-strip">
+  <div class="ms-label">Rosario in Action</div>
+  <div class="ms-track" id="ms-track">
+    <div class="ms-item"><img class="ms-img" src="images/speaking-stage.jpg" alt="Speaking"/><div class="ms-cap">BoltzRoom Strategy Session · Nigeria</div></div>
+    <div class="ms-item"><img class="ms-img" src="images/about-preview.jpg" alt="Whiteboard session"/><div class="ms-cap">Strategy Masterclass · Lagos</div></div>
+    <div class="ms-item"><img class="ms-img" src="images/speaking-secondary.jpg" alt="Speaking"/><div class="ms-cap">Workshop Facilitation · Nigeria</div></div>
+    <div class="ms-item"><img class="ms-img" src="images/video-thumb.jpg" alt="Live session"/><div class="ms-cap">BoltzRoom Live Session</div></div>
+    <div class="ms-item"><img class="ms-img" src="images/hire.jpg" alt="Rosario Anthony"/><div class="ms-cap">Studio Portrait · 2025</div></div>
+    <div class="ms-item"><img class="ms-img" src="images/about-portrait.jpg" alt="Rosario Anthony"/><div class="ms-cap">Studio Portrait · 2025</div></div>
+    <div class="ms-item"><img class="ms-img" src="images/hero.jpg" alt="Rosario Anthony"/><div class="ms-cap">Studio Portrait · 2025</div></div>
+  </div>
+</section>
+
+<!-- ── VIDEO ── -->
+<section id="video-section">
+  <div class="video-grid r">
+    <div>
+      <div class="intro-eyebrow">TEDx Speaker · BoltzRoom Host</div>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,4.5vw,4.5rem);font-weight:300;color:var(--cream);line-height:1;margin-bottom:1.5rem">Ideas worth<br/><em style="color:var(--ochre-l)">a stage</em></h2>
+      <p style="font-size:.95rem;line-height:1.85;color:var(--muted);margin-bottom:2rem">TEDx speaker, BoltzRoom host, and regular voice on African business growth, design thinking, and entrepreneurship. Watch Rosario think out loud — not just read from slides.</p>
+      <div style="display:flex;gap:.85rem;flex-wrap:wrap">
+        <a href="https://www.youtube.com/@AnthonyWaya" target="_blank" class="btn-p">Watch on YouTube</a>
+        <a href="speaking/index.html" class="btn-g">View Speaking</a>
+      </div>
+    </div>
+    <div class="v-wrap" onclick="window.open('https://www.youtube.com/@AnthonyWaya','_blank')">
+      <img src="images/video-thumb.jpg" alt="TEDxBauchi"/>
+      <div class="v-overlay">
+        <div class="v-ring"><div class="v-tri"></div></div>
+        <div class="v-label">TEDxBauchi · Economic Empowerment · 2019</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="testi-top r">
+    <h2 class="testi-h">In their own<br/><em>words</em></h2>
+    <p class="testi-sub">Real clients. Real outcomes. The kind of feedback that only comes from work that actually moved something.</p>
+  </div>
+  <div class="testi-row r">
+    <div class="tc"><div class="tq">"</div><p class="tt">He was very patient and walked with us each step of the way. We are more than happy with what our website looks like — a home online.</p><div class="tn">Irene Ibiwari Ikiro</div><div class="tr">Founder, Dauntless Widows Foundation</div></div>
+    <div class="tc"><div class="tq">"</div><p class="tt">Rosario's rebranding took my business to a whole new level. The smartest, most critical thinker and strategist I've worked with. If you seek excellence, call him.</p><div class="tn">Joy Nwaosa</div><div class="tr">Founder, Chop Chop by Nanyaa</div></div>
+    <div class="tc"><div class="tq">"</div><p class="tt">Excellent and well-cultured. He took time to understand exactly what we needed, challenged our assumptions, and delivered something that genuinely moved our business forward.</p><div class="tn">James Otemolu</div><div class="tr">Design Collaborator</div></div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-grid r">
+    <div>
+      <h2 class="contact-h">Ready to make<br/>something <em>happen?</em></h2>
+      <p class="contact-sub">Choose the right path. Rosario reads every message personally.</p>
+    </div>
+    <div>
+      <div class="cp-list">
+        <a href="mailto:hello@rosarioanthony.com?subject=Business%20Enquiry" class="cp"><div class="cp-lbl">Business Owners</div><div class="cp-title">Fix my business</div><div class="cp-desc">Strategy, branding, CX & operations.</div><span class="cp-arr">Work With Rosario →</span></a>
+        <a href="speaking/index.html" class="cp"><div class="cp-lbl">Event Organisers</div><div class="cp-title">Book a speaking appearance</div><div class="cp-desc">Keynotes, panels, masterclasses.</div><span class="cp-arr">View Speaking →</span></a>
+        <a href="hire/index.html" class="cp"><div class="cp-lbl">Employers · UK & Global</div><div class="cp-title">Hire Rosario</div><div class="cp-desc">Full-time or contract. UK-ready.</div><span class="cp-arr">View Profile →</span></a>
+        <a href="https://wa.me/2348000000000" class="cp"><div class="cp-lbl">Nigerian SME Clients</div><div class="cp-title">WhatsApp</div><div class="cp-desc">Fastest route for Nigerian clients.</div><span class="cp-arr">Open WhatsApp →</span></a>
+      </div>
+      <p class="contact-note">Or email: <a href="mailto:hello@rosarioanthony.com">hello@rosarioanthony.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>
+    <div class="footer-logo">Rosario <em>Anthony.</em></div>
+    <p class="footer-tagline">Growth Strategist · Systems Builder · TEDx Speaker · Co-founder, Boltzmenn & Outhbox UK</p>
+    <div class="footer-copy">© 2026 Rosario Anthony Waya. All rights reserved.</div>
+  </div>
+  <div>
+    <div class="fc-head">Navigate</div>
+    <div class="fc-links">
+      <a href="work/index.html">Work</a>
+      <a href="speaking/index.html">Speaking</a>
+      <a href="hire/index.html">Hire</a>
+      <a href="about/index.html">About</a>
+      <a href="blog/index.html">Ideas</a>
+    </div>
+  </div>
+  <div>
+    <div class="fc-head">Work Together</div>
+    <div class="fc-links">
+      <a href="mailto:hello@rosarioanthony.com?subject=Business%20Enquiry">Fix my Business</a>
+      <a href="speaking/index.html">Book a Talk</a>
+      <a href="hire/index.html">Hire Rosario</a>
+      <a href="https://wa.me/2348000000000">WhatsApp</a>
+    </div>
+  </div>
+  <div>
+    <div class="fc-head">Connect</div>
+    <div class="fc-links">
+      <a href="mailto:hello@rosarioanthony.com">hello@rosarioanthony.com</a>
+      <a href="https://www.youtube.com/@AnthonyWaya" target="_blank">YouTube</a>
+      <a href="https://drive.google.com/file/d/11ZRyiIasd6m1AeuhAcmXV1Za7mkOjEvl/view" target="_blank">Download CV</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reveal
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}})},{threshold:.07});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+// Nav
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',scrollY>80));
+
+// Nav responsive
+function setNav(){
+  const m=window.innerWidth<1024;
+  const hb=document.getElementById('hamburger');
+  const nl=document.querySelector('.nav-links');
+  const nc=document.querySelector('.nav-cta');
+  if(hb)hb.style.display=m?'flex':'none';
+  if(nl)nl.style.display=m?'none':'flex';
+  if(nc)nc.style.display=m?'none':'';
+}
+setNav();window.addEventListener('resize',setNav);
+
+// Mobile menu
+const hb=document.getElementById('hamburger');
+const mob=document.getElementById('mob-menu');
+if(hb)hb.addEventListener('click',()=>{const o=!mob.classList.contains('open');mob.classList.toggle('open',o);document.body.style.overflow=o?'hidden':''});
+
+// Media strip drag
+const t=document.getElementById('ms-track');
+if(t){let d=false,sx=0,sl=0;
+t.addEventListener('mousedown',e=>{d=true;sx=e.pageX-t.offsetLeft;sl=t.scrollLeft});
+t.addEventListener('mouseleave',()=>d=false);
+t.addEventListener('mouseup',()=>d=false);
+t.addEventListener('mousemove',e=>{if(!d)return;e.preventDefault();t.scrollLeft=sl-(e.pageX-t.offsetLeft-sx)*1.4});
+}
+</script>
+</body>
+</html>
