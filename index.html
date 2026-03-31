@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Rosario Anthony — Growth Strategist · Systems Builder</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
 <style>
 :root{
   --ink:#0B1F1F;--ink-d:#071515;
@@ -41,11 +41,11 @@ nav.solid{background:rgba(7,21,21,.94);backdrop-filter:blur(16px);border-bottom:
 .mob-cta{margin-top:2rem;font-size:.8rem!important;font-family:'DM Sans',sans-serif!important;font-weight:600!important;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-l)!important;border-bottom:none!important}
 
 /* HERO */
-#hero{position:relative;min-height:100vh;display:grid;grid-template-columns:55% 45%}
-.hero-img-col{position:relative;overflow:hidden}
-.hero-img-col img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+#hero{position:relative;min-height:88vh;max-height:860px;display:grid;grid-template-columns:55% 45%}
+.hero-img-col{position:relative;overflow:hidden;min-height:88vh;max-height:860px}
+.hero-img-col img{width:100%;height:100%;object-fit:cover;object-position:50% 8%;display:block}
 .hero-img-col::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--ink) 0%,rgba(11,31,31,.3) 60%,transparent 100%),linear-gradient(to top,var(--ink) 0%,transparent 40%)}
-.hero-text-col{display:flex;flex-direction:column;justify-content:flex-end;padding:8rem 3.5rem 4rem;border-left:1px solid var(--border)}
+.hero-text-col{display:flex;flex-direction:column;justify-content:flex-end;padding:6rem 3.5rem 3.5rem;border-left:1px solid var(--border)}
 .hero-tag{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ochre-l);margin-bottom:2rem;display:flex;align-items:center;gap:.75rem}
 .hero-tag::before{content:'';width:30px;height:1px;background:var(--ochre)}
 .hero-h1{font-size:clamp(3.5rem,5.5vw,5.5rem);font-weight:300;line-height:.95;color:var(--cream);margin-bottom:1.75rem}
@@ -59,6 +59,7 @@ nav.solid{background:rgba(7,21,21,.94);backdrop-filter:blur(16px);border-bottom:
 .hero-scroll{position:absolute;bottom:2.5rem;left:3rem;display:flex;align-items:center;gap:.75rem;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .hero-scroll-line{width:40px;height:1px;background:var(--muted);animation:linebreath 2s ease-in-out infinite}
 @keyframes linebreath{0%,100%{width:40px;opacity:.4}50%{width:65px;opacity:1}}
+
 
 /* ROUTING CARDS */
 #routing{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border)}
@@ -204,15 +205,25 @@ footer{padding:4.5rem 3rem 3rem;border-top:1px solid var(--border);display:grid;
 .r.in{opacity:1;transform:none}
 .r1{transition-delay:.08s}.r2{transition-delay:.18s}.r3{transition-delay:.28s}
 
+/* MARQUEE */
+.marquee-track{display:flex;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:flex;align-items:center;gap:0;animation:marquee 32s linear infinite;flex-shrink:0}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.marquee-track:hover .marquee-inner{animation-play-state:paused}
+.logo-item{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,235,225,.35);padding:0 2rem;white-space:nowrap;transition:color .2s}
+.logo-item:hover{color:rgba(240,235,225,.7)}
+.logo-sep{color:var(--ochre-l);opacity:.35;font-size:.55rem;flex-shrink:0}
+
+
 /* RESPONSIVE */
 @media(max-width:1024px){
   nav,.nav-links,.nav-cta{}.nav-links,.nav-cta{display:none!important}
   .nav-hamburger{display:flex!important}
   nav{padding:1rem 1.25rem}
   nav.solid{padding:.85rem 1.25rem}
-  #hero{grid-template-columns:1fr}
-  .hero-img-col{min-height:100vh;position:absolute;inset:0}
-  .hero-text-col{position:relative;z-index:2;min-height:100vh;padding:7rem 1.5rem 4rem;border-left:none;background:linear-gradient(to right,rgba(7,21,21,.92),rgba(7,21,21,.6))}
+  #hero{grid-template-columns:1fr;min-height:unset;max-height:unset;height:auto}
+  .hero-img-col{height:100vh;max-height:700px;min-height:unset;position:absolute;inset:0}
+  .hero-text-col{position:relative;z-index:2;min-height:100svh;max-height:700px;padding:6rem 1.5rem 3.5rem;border-left:none;background:linear-gradient(105deg,rgba(7,21,21,.96) 0%,rgba(7,21,21,.75) 100%)}
   #routing{grid-template-columns:1fr}
   .rc{aspect-ratio:5/3;border-right:none;border-bottom:1px solid var(--border)}
   #intro,#advantage,#proof,#video-section,#testimonials,#contact,#media-strip{padding-left:1.25rem;padding-right:1.25rem}
@@ -271,7 +282,62 @@ footer{padding:4.5rem 3rem 3rem;border-top:1px solid var(--border);display:grid;
   <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Scroll</span></div>
 </section>
 
+<!-- ── LOGO MARQUEE ── -->
+<section id="logos" style="padding:1.4rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;background:var(--ink)">
+  <div class="marquee-track">
+    <div class="marquee-inner" id="marquee">
+      <span class="logo-item">Boltzmenn</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Outhbox UK</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Chop Chop by Nanyaa</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Dauntless Foundation</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Syntyche Language Academy</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Maarif Foundation</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">DLight Media</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Qate's Kitchen UK</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">GMH Luxury</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">TCN Nigeria</span>
+      <span class="logo-sep">✦</span>
+    </div>
+    <div class="marquee-inner" aria-hidden="true">
+      <span class="logo-item">Boltzmenn</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Outhbox UK</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Chop Chop by Nanyaa</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Dauntless Foundation</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Syntyche Language Academy</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Maarif Foundation</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">DLight Media</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">Qate's Kitchen UK</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">GMH Luxury</span>
+      <span class="logo-sep">✦</span>
+      <span class="logo-item">TCN Nigeria</span>
+      <span class="logo-sep">✦</span>
+    </div>
+  </div>
+</section>
+
 <!-- ── ROUTING ── -->
+<section id="routing-header" style="padding:4rem 3rem 2.5rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center">
+  <div style="font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ochre);margin-bottom:1.1rem">What brings you here?</div>
+  <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,3.8vw,3.5rem);font-weight:400;color:var(--cream);line-height:1.05;max-width:640px;margin:0 auto .85rem">Tell Rosario what you <em style="font-style:italic;color:var(--ochre-l)">need</em></h2>
+  <p style="font-size:.9rem;color:var(--muted);max-width:480px;margin:0 auto;line-height:1.75">Three paths. Each leads somewhere different. Choose the one that fits where you are right now.</p>
+</section>
 <section id="routing">
   <a href="#contact" class="rc">
     <div class="rc-bg" style="background-image:url('images/about-preview.jpg')"></div>
@@ -350,6 +416,10 @@ footer{padding:4.5rem 3rem 3rem;border-top:1px solid var(--border);display:grid;
 </section>
 
 <!-- ── ECONOMIC ── -->
+<section id="economic-header" style="background:var(--teal);padding:3.5rem 3rem 0;text-align:center">
+  <div style="font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,135,42,.75);margin-bottom:1rem">Better systems mean better numbers</div>
+  <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,3.25rem);font-weight:400;color:var(--cream);line-height:1.05;max-width:560px;margin:0 auto">What actually changes <em style="font-style:italic;color:var(--ochre-l)">when Rosario works with you</em></h2>
+</section>
 <section id="economic">
   <div class="ec-item r r1"><span class="ec-arrow">↑</span><div class="ec-metric">Revenue</div><p class="ec-body">Clearer positioning converts more demand into actual income.</p></div>
   <div class="ec-item r r2"><span class="ec-arrow">↓</span><div class="ec-metric">Waste</div><p class="ec-body">Operational redesign removes friction and hidden loss.</p></div>
