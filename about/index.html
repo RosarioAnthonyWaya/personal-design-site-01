@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About — Rosario Anthony</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#0B1F1F;--ink-d:#071515;
+  --teal:#0B4F4F;--teal-m:#0E6B6B;--teal-l:#17999A;
+  --cream:#F0EBE1;--cream-d:#E4DDD0;
+  --ochre:#C8872A;--ochre-l:#DFA84E;
+  --muted:rgba(240,235,225,0.48);
+  --border:rgba(240,235,225,0.1);--border-m:rgba(240,235,225,0.2);
+  --ink-muted:rgba(11,31,31,0.55);
+  --ink-border:rgba(11,31,31,0.12);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+h1,h2,h3,h4{font-family:'DM Serif Display',serif;line-height:1.05;letter-spacing:-.01em}
+em{font-style:italic}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* ── SHARED TYPE ── */
+.eyebrow{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ochre);margin-bottom:1.1rem;display:block}
+.eyebrow-light{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,135,42,.7);margin-bottom:1.1rem;display:block}
+.eyebrow-ink{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1.1rem;display:block}
+
+/* ── BUTTONS ── */
+.btn-dark{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--cream);padding:.85rem 2.25rem;transition:all .25s;display:inline-block}
+.btn-dark:hover{background:var(--ochre-l);color:#fff}
+.btn-outline-light{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);border:1px solid var(--border-m);padding:.85rem 2.25rem;transition:all .25s;display:inline-block}
+.btn-outline-light:hover{border-color:var(--cream);background:rgba(240,235,225,.07)}
+.btn-teal{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);background:var(--teal);padding:.85rem 2.25rem;transition:all .25s;display:inline-block}
+.btn-teal:hover{background:var(--teal-m)}
+.btn-outline-ink{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink-border);padding:.85rem 2.25rem;transition:all .25s;display:inline-block}
+.btn-outline-ink:hover{border-color:var(--teal);color:var(--teal)}
+.text-link-light{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);display:inline-flex;align-items:center;gap:.55rem;border-bottom:1px solid var(--border-m);padding-bottom:.3rem;transition:all .2s}
+.text-link-light:hover{color:var(--ochre-l);border-color:var(--ochre);gap:.85rem}
+.text-link-ink{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);display:inline-flex;align-items:center;gap:.55rem;border-bottom:1px solid var(--ink-border);padding-bottom:.3rem;transition:all .2s}
+.text-link-ink:hover{color:var(--teal);border-color:var(--teal);gap:.85rem}
+
+/* ── NAV ── */
+nav.main-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;transition:all .4s}
+nav.main-nav.solid{background:rgba(7,21,21,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:1rem 3rem}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--cream);letter-spacing:.02em}
+.nav-logo em{color:var(--ochre-l);font-style:italic}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.72rem;font-weight:500;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-cta{font-size:.72rem;font-weight:600;color:var(--ink);background:var(--cream);padding:.55rem 1.5rem;letter-spacing:.06em;text-transform:uppercase;transition:all .2s}
+.nav-cta:hover{background:var(--ochre-l);color:#fff}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.35rem}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--cream);border-radius:1px;transition:all .3s}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--ink-d);z-index:199;padding:6rem 2.5rem 3rem;flex-direction:column}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'DM Serif Display',serif;font-size:2.5rem;font-weight:400;color:var(--cream);padding:.6rem 0;border-bottom:1px solid var(--border);display:block;transition:color .2s}
+.mobile-menu a:hover{color:var(--ochre-l)}
+.mob-cta-link{margin-top:1.5rem;font-family:'DM Sans',sans-serif!important;font-size:.8rem!important;font-weight:600!important;letter-spacing:.1em;text-transform:uppercase;color:var(--ochre-l)!important;border-bottom:none!important}
+
+/* ── PAGE HEADER BAND ── */
+.page-band{padding:9rem 3rem 5rem;background:var(--teal)}
+.page-band.dark{background:var(--ink-d)}
+.page-band .eyebrow{color:rgba(200,135,42,.75)}
+.page-band-h{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:1rem}
+.page-band-h em{color:var(--ochre-l)}
+.page-band-sub{font-size:.95rem;color:rgba(240,235,225,.55);max-width:520px;line-height:1.8}
+
+/* ── SECTIONS ── */
+.s-dark{background:var(--ink);color:var(--cream)}
+.s-ink{background:var(--ink-d);color:var(--cream)}
+.s-teal{background:var(--teal);color:var(--cream)}
+.s-cream{background:var(--cream);color:var(--ink)}
+.s-cream .eyebrow-ink{color:var(--teal)}
+.s-cream h2,.s-cream h3{color:var(--ink)}
+.s-cream h2 em,.s-cream h3 em{color:var(--teal)}
+.pad{padding:5.5rem 3rem}
+.pad-sm{padding:4rem 3rem}
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+.divider-ink{border:none;border-top:1px solid var(--ink-border);margin:0}
+
+/* ── TIMELINE ── */
+.tl{position:relative;padding-left:2rem}
+.tl::before{content:'';position:absolute;left:.5rem;top:.4rem;bottom:.4rem;width:1px;background:linear-gradient(to bottom,var(--teal),transparent)}
+.tl-item{position:relative;margin-bottom:2rem}
+.tl-dot{position:absolute;left:-1.6rem;top:.35rem;width:8px;height:8px;border-radius:50%;background:var(--teal);border:2px solid var(--ink)}
+.tl-date{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-l);margin-bottom:.2rem}
+.tl-title{font-size:.95rem;font-weight:600;color:var(--cream);margin-bottom:.1rem}
+.tl-org{font-size:.82rem;color:var(--teal-l);font-weight:500}
+.tl-desc{font-size:.8rem;color:var(--muted);margin-top:.3rem;line-height:1.6}
+/* Cream timeline */
+.s-cream .tl::before{background:linear-gradient(to bottom,var(--teal),transparent)}
+.s-cream .tl-dot{background:var(--teal);border-color:var(--cream)}
+.s-cream .tl-title{color:var(--ink)}
+.s-cream .tl-org{color:var(--teal)}
+.s-cream .tl-desc{color:var(--ink-muted)}
+
+/* ── CONTACT PATHS ── */
+.cp-list{display:flex;flex-direction:column}
+.cp{display:block;padding:1.75rem 1.5rem;border-bottom:1px solid var(--border);text-decoration:none;border-left:2px solid transparent;transition:all .2s}
+.cp:first-child{border-top:1px solid var(--border)}
+.cp:hover{background:rgba(240,235,225,.03);border-left-color:var(--ochre)}
+.cp-lbl{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:.4rem}
+.cp-title{font-family:'DM Serif Display',serif;font-size:1.3rem;font-weight:400;color:var(--cream);margin-bottom:.25rem}
+.cp-desc{font-size:.78rem;color:var(--muted)}
+.cp-arr{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-l);margin-top:.65rem;display:block;opacity:.6;transition:opacity .2s}
+.cp:hover .cp-arr{opacity:1}
+
+/* ── FOOTER ── */
+footer.site-footer{padding:4.5rem 3rem 3rem;background:var(--ink-d);border-top:1px solid var(--border);display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.75rem;font-weight:400;color:var(--cream);margin-bottom:.7rem}
+.footer-logo em{color:var(--ochre-l)}
+.footer-tagline{font-size:.78rem;color:var(--muted);line-height:1.65;max-width:250px}
+.footer-copy{font-size:.65rem;color:rgba(240,235,225,.18);margin-top:2.5rem}
+.fc-head{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:1.25rem}
+.fc-links{display:flex;flex-direction:column;gap:.6rem}
+.fc-links a{font-size:.8rem;color:var(--muted);transition:color .2s}
+.fc-links a:hover{color:var(--cream)}
+
+/* ── MARQUEE ── */
+.marquee-wrap{padding:1.4rem 0;border-bottom:1px solid var(--border);overflow:hidden;background:var(--ink)}
+.marquee-track{display:flex;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:flex;align-items:center;animation:marquee 32s linear infinite;flex-shrink:0}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.marquee-wrap:hover .marquee-inner{animation-play-state:paused}
+.logo-item{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,235,225,.32);padding:0 2.25rem;white-space:nowrap;transition:color .2s}
+.logo-item:hover{color:rgba(240,235,225,.65)}
+.logo-sep{color:var(--ochre-l);opacity:.3;font-size:.55rem;flex-shrink:0}
+
+/* ── REVEAL ── */
+.r{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.r.in{opacity:1;transform:none}
+.r1{transition-delay:.08s}.r2{transition-delay:.18s}.r3{transition-delay:.28s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  nav.main-nav{padding:1rem 1.25rem}
+  nav.main-nav.solid{padding:.85rem 1.25rem}
+  .nav-links,.nav-cta{display:none!important}
+  .nav-hamburger{display:flex!important}
+  .pad,.pad-sm,.page-band{padding-left:1.25rem;padding-right:1.25rem}
+  .page-band{padding-top:7rem;padding-bottom:3.5rem}
+  footer.site-footer{grid-template-columns:1fr 1fr;gap:2rem;padding:3rem 1.25rem 2rem}
+}
+@media(max-width:480px){
+  footer.site-footer{grid-template-columns:1fr}
+}
+
+/* ABOUT PAGE */
+.about-hero{display:grid;grid-template-columns:1fr 1fr;min-height:82vh;max-height:800px}
+.ah-img{position:relative;overflow:hidden}
+.ah-img img{width:100%;height:100%;object-fit:cover;object-position:50% 8%;display:block}
+.ah-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--cream) 100%),linear-gradient(to top,var(--cream) 0%,transparent 30%)}
+.ah-content{background:var(--cream);display:flex;flex-direction:column;justify-content:flex-end;padding:6rem 3.5rem 4rem}
+.ah-eyebrow{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem}
+.ah-eyebrow::before{content:'';width:28px;height:1px;background:var(--teal)}
+.ah-h1{font-size:clamp(3rem,5vw,5rem);font-weight:400;color:var(--ink);line-height:.95;margin-bottom:1.5rem}
+.ah-h1 em{color:var(--teal)}
+.ah-sub{font-size:.95rem;color:var(--ink-muted);line-height:1.85;max-width:380px}
+.story-pull{font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;font-style:italic;color:var(--teal);line-height:1.45;border-left:2px solid var(--teal);padding-left:1.5rem;margin:2rem 0}
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink-border)}
+.adv-card{background:var(--cream);padding:2.5rem 2rem;transition:background .2s}
+.adv-card:hover{background:rgba(11,79,79,.06)}
+.adv-n{font-size:.85rem;color:var(--teal);margin-bottom:1.25rem;font-family:'DM Serif Display',serif}
+.adv-title{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--ink);margin-bottom:.75rem;line-height:1.2}
+.adv-title em{color:var(--teal)}
+.adv-body{font-size:.875rem;line-height:1.78;color:var(--ink-muted)}
+.adv-tag{display:inline-block;margin-top:1.25rem;font-size:.62rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--teal);opacity:.65}
+.ip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.ip-card{background:var(--ink);padding:2rem 1.75rem;transition:background .2s}
+.ip-card:hover{background:rgba(240,235,225,.04)}
+.ip-badge{display:inline-block;background:var(--teal);color:var(--cream);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .7rem;margin-bottom:.85rem}
+.ip-title{font-family:'DM Serif Display',serif;font-size:1.1rem;font-weight:400;color:var(--cream);margin-bottom:.5rem}
+.ip-body{font-size:.8rem;line-height:1.65;color:var(--muted)}
+.cert-list{display:flex;flex-direction:column;gap:.5rem}
+.cert-row{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid var(--ink-border)}
+.cert-name{font-size:.85rem;font-weight:600;color:var(--ink)}
+.cert-body{font-size:.72rem;color:var(--ink-muted)}
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--ink-border)}
+.ss{padding:2.5rem 2rem;border-right:1px solid var(--ink-border)}
+.ss:last-child{border-right:none}
+.ss-n{font-family:'DM Serif Display',serif;font-size:3rem;font-weight:400;color:var(--ink);line-height:1;margin-bottom:.35rem}
+.ss-n em{color:var(--teal);font-style:italic}
+.ss-l{font-size:.75rem;color:var(--ink-muted);line-height:1.5}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+
+@media(max-width:1024px){
+  .about-hero{grid-template-columns:1fr;min-height:unset;max-height:unset}
+  .ah-img{height:70vw;max-height:420px}
+  .ah-img::after{background:linear-gradient(to top,var(--cream) 0%,transparent 40%)}
+  .ah-content{padding:3rem 1.25rem 2.5rem}
+  .adv-grid,.ip-grid,.two-col{grid-template-columns:1fr}
+  .stat-strip{grid-template-columns:1fr 1fr}
+  .ss{border-bottom:1px solid var(--ink-border)}
+}
+</style>
+</head>
+<body>
+<nav class="main-nav" id="nav">
+  <a href="../index.html" class="nav-logo">Rosario<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="../work/index.html">Work</a></li>
+    <li><a href="../speaking/index.html">Speaking</a></li>
+    <li><a href="../hire/index.html">Hire</a></li>
+    <li><a href="../about/index.html" class="active">About</a></li>
+    <li><a href="../blog/index.html">Ideas</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Work With Rosario</a>
+  <button class="nav-hamburger" id="hamburger" style="display:none"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-menu" id="mob-menu">
+  <a href="../work/index.html">Work</a>
+  <a href="../speaking/index.html">Speaking</a>
+  <a href="../hire/index.html">Hire</a>
+  <a href="../about/index.html">About</a>
+  <a href="../blog/index.html">Ideas</a>
+  <a href="../index.html#contact" class="mob-cta-link">Work With Rosario →</a>
+</nav>
+
+<!-- ABOUT HERO - CREAM -->
+<section class="about-hero">
+  <div class="ah-img">
+    <img src="../images/about-portrait.jpg" alt="Rosario Anthony"/>
+  </div>
+  <div class="ah-content">
+    <div class="ah-eyebrow">About Rosario Anthony</div>
+    <h1 class="ah-h1">The thinking<br/>behind <em>the work</em></h1>
+    <p class="ah-sub">First Class physicist. TEDx speaker. Co-founder across two continents. A decade building businesses, brands, and systems across Africa and the UK.</p>
+  </div>
+</section>
+
+<!-- STORY - CREAM -->
+<section class="s-cream pad">
+  <div class="two-col r">
+    <div>
+      <span class="eyebrow-ink">The Arc</span>
+      <h2 style="font-size:clamp(2.2rem,3.8vw,3.5rem);font-weight:400;color:var(--ink);line-height:1;margin-bottom:1.5rem">Physics. Design.<br/><em style="color:var(--teal)">Business.</em></h2>
+      <div class="story-pull">Most businesses don't fail because of bad products. They fail because of broken systems.</div>
+    </div>
+    <div>
+      <p style="font-size:.95rem;line-height:1.9;color:var(--ink-muted);margin-bottom:1.1rem">I graduated First Class in Physics — Best Student, 4.87 CGPA. Not because I wanted to be a scientist, but because I was obsessed with <strong style="color:var(--ink)">understanding how systems work.</strong> What holds things together. Where the real constraint lives. Why things break the way they do.</p>
+      <p style="font-size:.95rem;line-height:1.9;color:var(--ink-muted);margin-bottom:1.1rem">That obsession led me into design — where I discovered you could apply systems thinking to how people experience a business. I built brands, interfaces, customer journeys, and developed proprietary frameworks — S.E.E. Them™, the 9-Touch Rule™, the Six Feelings Framework — that helped Nigerian SMEs diagnose and fix what wasn't working.</p>
+      <p style="font-size:.95rem;line-height:1.9;color:var(--ink-muted);margin-bottom:1.75rem">I co-founded Boltzmenn as Africa's SME growth platform. Launched Outhbox UK as a registered UK tech company. Started Design Factory. Curated TEDxGwallameji and spoke at TEDxBauchi. Each step was the same question at a different scale: <strong style="color:var(--ink)">why isn't this working, and what would actually fix it?</strong></p>
+      <a href="../index.html#contact" class="text-link-ink">Work With Rosario →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS - CREAM -->
+<section class="s-cream">
+  <div class="stat-strip r">
+    <div class="ss"><div class="ss-n">9<em>+</em></div><div class="ss-l">Years across strategy,<br/>design & operations</div></div>
+    <div class="ss"><div class="ss-n">2</div><div class="ss-l">Companies co-founded<br/>across Africa & the UK</div></div>
+    <div class="ss"><div class="ss-n">1<em>st</em></div><div class="ss-l">Class Physics Honours<br/>4.87 CGPA · Best Graduate</div></div>
+    <div class="ss"><div class="ss-n">2<em>×</em></div><div class="ss-l">TEDx — speaker<br/>& curator</div></div>
+  </div>
+</section>
+
+<!-- ADVANTAGE - INK DARK -->
+<section class="s-dark pad">
+  <span class="eyebrow-light">The Unfair Advantage</span>
+  <h2 style="font-size:clamp(2.2rem,3.8vw,3.5rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:3rem">Why Rosario is<br/><em style="color:var(--ochre-l)">not interchangeable</em></h2>
+  <div class="adv-grid r" style="background:rgba(240,235,225,.07)">
+    <div class="adv-card" style="background:var(--ink)"><div class="adv-n">01</div><div class="adv-title" style="color:var(--cream)">The Scientist's <em>Eye</em></div><div class="adv-body" style="color:var(--muted)">First Class Physics with a 4.87 CGPA and Best Graduating Student distinction. That training builds a specific mind — one that sees systems, constraints, and root causes. Rosario diagnoses what's actually wrong before touching anything.</div><span class="adv-tag">BSc Physics (First Class) · Southwestern University Nigeria</span></div>
+    <div class="adv-card" style="background:var(--ink)"><div class="adv-n">02</div><div class="adv-title" style="color:var(--cream)">The Designer's <em>Mind</em></div><div class="adv-body" style="color:var(--muted)">MIT-trained UX practitioner. Creator of S.E.E. Them™, the 9-Touch Rule™, and the Six Feelings Framework. Founder of Design Factory. Rosario treats design as business experience — not decoration.</div><span class="adv-tag">MIT UX Bootcamp · Certified Product Designer · Design Factory</span></div>
+    <div class="adv-card" style="background:var(--ink)"><div class="adv-n">03</div><div class="adv-title" style="color:var(--cream)">The Commercial <em>Lens</em></div><div class="adv-body" style="color:var(--muted)">Co-founder of Boltzmenn and Outhbox UK. TEDx speaker. Certified in GFA, GRC, Fortinet NSE, CIPM. Every recommendation connects to revenue, efficiency, and measurable business outcomes.</div><span class="adv-tag">GFA · CIPM · GRC · NSE1 & NSE2 · Outhbox UK Director</span></div>
+  </div>
+</section>
+
+<!-- PROPRIETARY FRAMEWORKS - TEAL -->
+<section class="s-teal pad">
+  <span class="eyebrow-light">Proprietary IP</span>
+  <h2 style="font-size:clamp(2.2rem,3.8vw,3.5rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:.75rem">Not just services.<br/><em style="color:var(--ochre-l)">Intellectual property.</em></h2>
+  <p style="font-size:.9rem;color:rgba(240,235,225,.55);max-width:520px;line-height:1.8;margin-bottom:3rem">These frameworks were built through real client work and refined over years. They are what separate diagnosis from guesswork.</p>
+  <div class="ip-grid r">
+    <div class="ip-card"><div class="ip-badge">CX Framework</div><div class="ip-title">S.E.E. Them™</div><p class="ip-body">See, engage, and retain customers through structured touchpoint design. Used across Nigerian SMEs.</p></div>
+    <div class="ip-card"><div class="ip-badge">Customer Journey</div><div class="ip-title">9-Touch Rule™</div><p class="ip-body">Full customer journey methodology from awareness to advocacy — no touchpoint left to chance.</p></div>
+    <div class="ip-card"><div class="ip-badge">Messaging</div><div class="ip-title">Six Feelings Framework</div><p class="ip-body">Helps brands communicate in ways that land emotionally — moving customers from awareness to action.</p></div>
+    <div class="ip-card"><div class="ip-badge">Lead Generation</div><div class="ip-title">₦500K/Month Scorecard</div><p class="ip-body">Business revenue readiness diagnostic. Core lead gen asset behind Boltzmenn's consulting work.</p></div>
+    <div class="ip-card"><div class="ip-badge">Consulting Format</div><div class="ip-title">BoltzRoom Sessions</div><p class="ip-body">Quarterly business hangout for Nigerian entrepreneurs — strategy, accountability, community.</p></div>
+    <div class="ip-card"><div class="ip-badge">Training Programme</div><div class="ip-title">Design Factory</div><p class="ip-body">Teaching practical design skills to the next generation of African creatives and entrepreneurs.</p></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE + EDUCATION - CREAM -->
+<section class="s-cream pad">
+  <div class="two-col r">
+    <div>
+      <span class="eyebrow-ink">Work Experience</span>
+      <div class="tl" style="margin-top:2rem">
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--cream)"></div><div class="tl-date">Jan 2023 – Present</div><div class="tl-title" style="color:var(--ink)">Co-founder & Chief Strategist</div><div class="tl-org" style="color:var(--teal)">Boltzmenn · Nigeria</div><div class="tl-desc" style="color:var(--ink-muted)">Africa's SME growth platform. Proprietary IP: S.E.E. Them™, 9-Touch Rule™, Six Feelings Framework.</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--cream)"></div><div class="tl-date">Active · UK Registered</div><div class="tl-title" style="color:var(--ink)">Co-founder & Director</div><div class="tl-org" style="color:var(--teal)">Outhbox UK · United Kingdom</div><div class="tl-desc" style="color:var(--ink-muted)">Cybersecurity, digital transformation, software development. Active health & social care client.</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--cream)"></div><div class="tl-date">Current</div><div class="tl-title" style="color:var(--ink)">Communications & Creative</div><div class="tl-org" style="color:var(--teal)">Turkish Maarif Foundation · Equatorial Guinea</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--cream)"></div><div class="tl-date">Feb – Oct 2022</div><div class="tl-title" style="color:var(--ink)">Design Manager</div><div class="tl-org" style="color:var(--teal)">DLight Digital Media · Lagos</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--cream)"></div><div class="tl-date">May – Jun 2021</div><div class="tl-title" style="color:var(--ink)">Brand & Creative Strategist</div><div class="tl-org" style="color:var(--teal)">GMH Luxury · Contract</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--cream)"></div><div class="tl-date">Nov 2017 – Dec 2018</div><div class="tl-title" style="color:var(--ink)">Assistant Lecturer</div><div class="tl-org" style="color:var(--teal)">Abubakar Tatari Ali Polytechnic · Bauchi</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--cream)"></div><div class="tl-date">Mar – Oct 2016</div><div class="tl-title" style="color:var(--ink)">Junior Physicist Intern</div><div class="tl-org" style="color:var(--teal)">Dept of Petroleum Resources · Nigeria</div></div>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow-ink">Education & Certifications</span>
+      <div class="tl" style="margin-top:2rem;margin-bottom:2.5rem">
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--cream)"></div><div class="tl-date">2013 – 2017</div><div class="tl-title" style="color:var(--ink)">BSc Physics — First Class Honours</div><div class="tl-org" style="color:var(--teal)">Southwestern University Nigeria · 4.87 CGPA · Best Graduating Student</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--cream)"></div><div class="tl-date">2022</div><div class="tl-title" style="color:var(--ink)">UX Training Bootcamp</div><div class="tl-org" style="color:var(--teal)">MIT Summer School</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--cream)"></div><div class="tl-date">2023 – Present</div><div class="tl-title" style="color:var(--ink)">MBA (in progress)</div><div class="tl-org" style="color:var(--teal)">University of the People</div></div>
+      </div>
+      <span class="eyebrow-ink">Certifications</span>
+      <div class="cert-list" style="margin-top:1.25rem">
+        <div class="cert-row"><span class="cert-name">Global Financial Analyst</span><span class="cert-body">EduBridge · 2024</span></div>
+        <div class="cert-row"><span class="cert-name">GRC Certified</span><span class="cert-body">Cybarik Academy</span></div>
+        <div class="cert-row"><span class="cert-name">NSE1 & NSE2 — Network Security</span><span class="cert-body">Fortinet · 2020</span></div>
+        <div class="cert-row"><span class="cert-name">CPM & CPMP</span><span class="cert-body">CIPM · 2018</span></div>
+        <div class="cert-row"><span class="cert-name">Management Consulting</span><span class="cert-body">EduBridge · 2020</span></div>
+        <div class="cert-row"><span class="cert-name">Certified Product Designer</span><span class="cert-body">Utiva · 2020</span></div>
+        <div class="cert-row"><span class="cert-name">Certified Facility Manager</span><span class="cert-body">CICPFM · 2018</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- B&W PORTRAIT + CTA - INK -->
+<section class="s-ink pad">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center" class="r">
+    <div style="position:relative;overflow:hidden;aspect-ratio:3/4">
+      <img src="../images/about-bw.jpg" alt="Rosario Anthony" style="width:100%;height:100%;object-fit:cover;object-position:50% 10%;filter:contrast(1.05)"/>
+    </div>
+    <div>
+      <span class="eyebrow-light">Ready to work together?</span>
+      <h2 style="font-size:clamp(2.2rem,3.8vw,3.5rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:1.25rem">Let's make something <em style="color:var(--ochre-l)">real happen.</em></h2>
+      <p style="font-size:.95rem;line-height:1.85;color:var(--muted);margin-bottom:2.5rem">Three paths. Choose the one that fits where you are right now.</p>
+      <div class="cp-list">
+        <a href="mailto:hello@rosarioanthony.com?subject=Business%20Enquiry" class="cp"><div class="cp-lbl">Business Owners</div><div class="cp-title">Fix my business</div><span class="cp-arr">Work With Rosario →</span></a>
+        <a href="../speaking/index.html" class="cp"><div class="cp-lbl">Event Organisers</div><div class="cp-title">Book a speaking appearance</div><span class="cp-arr">View Speaking →</span></a>
+        <a href="../hire/index.html" class="cp"><div class="cp-lbl">Employers · UK & Global</div><div class="cp-title">Hire Rosario</div><span class="cp-arr">View Profile →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div>
+    <div class="footer-logo">Rosario <em>Anthony.</em></div>
+    <p class="footer-tagline">Growth Strategist · Systems Builder · TEDx Speaker · Co-founder, Boltzmenn & Outhbox UK</p>
+    <div class="footer-copy">© 2026 Rosario Anthony Waya. All rights reserved.</div>
+  </div>
+  <div>
+    <div class="fc-head">Navigate</div>
+    <div class="fc-links">
+      <a href="../work/index.html">Work</a>
+      <a href="../speaking/index.html">Speaking</a>
+      <a href="../hire/index.html">Hire</a>
+      <a href="../about/index.html">About</a>
+      <a href="../blog/index.html">Ideas</a>
+    </div>
+  </div>
+  <div>
+    <div class="fc-head">Work Together</div>
+    <div class="fc-links">
+      <a href="mailto:hello@rosarioanthony.com">Fix my Business</a>
+      <a href="../speaking/index.html">Book a Talk</a>
+      <a href="../hire/index.html">Hire Rosario</a>
+      <a href="https://wa.me/2348000000000">WhatsApp</a>
+    </div>
+  </div>
+  <div>
+    <div class="fc-head">Connect</div>
+    <div class="fc-links">
+      <a href="mailto:hello@rosarioanthony.com">hello@rosarioanthony.com</a>
+      <a href="https://www.youtube.com/@AnthonyWaya" target="_blank">YouTube</a>
+      <a href="https://drive.google.com/file/d/11ZRyiIasd6m1AeuhAcmXV1Za7mkOjEvl/view" target="_blank">Download CV</a>
+    </div>
+  </div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}})},{threshold:.07});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',scrollY>60));
+function setNav(){const m=window.innerWidth<1024;const hb=document.getElementById('hamburger');const nl=document.querySelector('.nav-links');const nc=document.querySelector('.nav-cta');if(hb)hb.style.display=m?'flex':'none';if(nl)nl.style.display=m?'none':'flex';if(nc)nc.style.display=m?'none':'';}
+setNav();window.addEventListener('resize',setNav);
+const hb=document.getElementById('hamburger');const mob=document.getElementById('mob-menu');
+if(hb)hb.addEventListener('click',()=>{const o=!mob.classList.contains('open');mob.classList.toggle('open',o);hb.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';});
+const t=document.getElementById('ms-track');if(t){let d=false,sx=0,sl=0;t.addEventListener('mousedown',e=>{d=true;sx=e.pageX-t.offsetLeft;sl=t.scrollLeft});t.addEventListener('mouseleave',()=>d=false);t.addEventListener('mouseup',()=>d=false);t.addEventListener('mousemove',e=>{if(!d)return;e.preventDefault();t.scrollLeft=sl-(e.pageX-t.offsetLeft-sx)*1.4});}
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ideas — Rosario Anthony</title>
+<title>Hire — Rosario Anthony</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
@@ -154,21 +154,39 @@ footer.site-footer{padding:4.5rem 3rem 3rem;background:var(--ink-d);border-top:1
   footer.site-footer{grid-template-columns:1fr}
 }
 
-.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.pc{background:var(--ink);text-decoration:none;display:block;transition:background .2s}
-.pc:hover{background:rgba(240,235,225,.03)}
-.pc-img{aspect-ratio:16/9;overflow:hidden;position:relative}
-.pc-img-inner{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .3s;filter:brightness(.7);display:block}
-.pc:hover .pc-img-inner{transform:scale(1.04);filter:brightness(.9)}
-.pc-body{padding:1.75rem}
-.pc-cat{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre);margin-bottom:.5rem}
-.pc-title{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400;color:var(--cream);line-height:1.3;margin-bottom:.65rem}
-.pc-excerpt{font-size:.8rem;line-height:1.65;color:var(--muted);margin-bottom:.75rem}
-.pc-meta{display:flex;gap:.85rem;font-size:.7rem;color:var(--muted);opacity:.65}
-.cat-pills{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:3rem}
-.cat-pill{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:.3rem .85rem;cursor:pointer;transition:all .2s;background:transparent}
-.cat-pill:hover,.cat-pill.on{background:var(--teal);color:var(--cream);border-color:var(--teal)}
-@media(max-width:1024px){.post-grid{grid-template-columns:1fr}}
+.hire-hero{display:grid;grid-template-columns:1fr 1fr;min-height:78vh;max-height:780px}
+.hh-img{position:relative;overflow:hidden}
+.hh-img img{width:100%;height:100%;object-fit:cover;object-position:50% 8%;display:block}
+.hh-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--cream) 100%)}
+.hh-content{background:var(--cream);display:flex;flex-direction:column;justify-content:flex-end;padding:6rem 3.5rem 4rem}
+.value-list{display:flex;flex-direction:column}
+.vi{padding:1.35rem 1.25rem;border-bottom:1px solid var(--ink-border);border-left:2px solid transparent;transition:all .2s}
+.vi:first-child{border-top:1px solid var(--ink-border)}
+.vi:hover{border-left-color:var(--teal);background:rgba(11,79,79,.04);padding-left:1.75rem}
+.vi-title{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.3rem}
+.vi-desc{font-size:.8rem;line-height:1.65;color:var(--ink-muted)}
+.roles-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink-border)}
+.rc{background:var(--cream);padding:1.75rem 1.5rem;transition:background .2s}
+.rc:hover{background:rgba(11,79,79,.05)}
+.rc-badge{display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:rgba(11,79,79,.1);padding:.2rem .65rem;margin-bottom:.75rem}
+.rc-title{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.35rem}
+.rc-type{font-size:.72rem;color:var(--ink-muted);margin-bottom:.65rem}
+.rc-does{font-size:.8rem;line-height:1.6;color:var(--ink-muted)}
+.org-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.oi{background:var(--cream);border:1px solid var(--ink-border);padding:.9rem 1rem;transition:all .2s}
+.oi:hover{border-color:var(--teal)}
+.oi-name{font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:.15rem}
+.oi-type{font-size:.7rem;color:var(--ink-muted)}
+.uk-note{background:var(--teal);padding:1.75rem;margin-bottom:1.5rem}
+.cv-bar{background:var(--ink);padding:1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-top:1.25rem}
+@media(max-width:1024px){
+  .hire-hero{grid-template-columns:1fr;min-height:unset;max-height:unset}
+  .hh-img{height:60vw;max-height:380px}
+  .hh-img::after{background:linear-gradient(to top,var(--cream) 0%,transparent 40%)}
+  .hh-content{padding:3rem 1.25rem 2.5rem}
+  .roles-grid,.org-grid{grid-template-columns:1fr}
+  .cv-bar{flex-direction:column;align-items:flex-start}
+}
 </style>
 </head>
 <body>
@@ -177,9 +195,9 @@ footer.site-footer{padding:4.5rem 3rem 3rem;background:var(--ink-d);border-top:1
   <ul class="nav-links">
     <li><a href="../work/index.html">Work</a></li>
     <li><a href="../speaking/index.html">Speaking</a></li>
-    <li><a href="../hire/index.html">Hire</a></li>
+    <li><a href="../hire/index.html" class="active">Hire</a></li>
     <li><a href="../about/index.html">About</a></li>
-    <li><a href="../blog/index.html" class="active">Ideas</a></li>
+    <li><a href="../blog/index.html">Ideas</a></li>
   </ul>
   <a href="../index.html#contact" class="nav-cta">Work With Rosario</a>
   <button class="nav-hamburger" id="hamburger" style="display:none"><span></span><span></span><span></span></button>
@@ -193,37 +211,72 @@ footer.site-footer{padding:4.5rem 3rem 3rem;background:var(--ink-d);border-top:1
   <a href="../index.html#contact" class="mob-cta-link">Work With Rosario →</a>
 </nav>
 
-<div class="page-band dark">
-  <span class="eyebrow">Ideas</span>
-  <h1 class="page-band-h">Rosario's take on<br/><em>business & growth</em></h1>
-  <p class="page-band-sub">Perspectives on African markets, customer experience, and how businesses actually perform. No filler.</p>
-</div>
+<section class="hire-hero">
+  <div class="hh-img"><img src="../images/hire.jpg" alt="Rosario Anthony"/></div>
+  <div class="hh-content">
+    <div style="font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem"><span style="display:block;width:28px;height:1px;background:var(--teal)"></span>Available to hire</div>
+    <h1 style="font-size:clamp(2.8rem,5vw,4.5rem);font-weight:400;color:var(--ink);line-height:.95;margin-bottom:1.25rem">Strategy. Operations.<br/>Product. Brand.<br/><em style="color:var(--teal)">In one person.</em></h1>
+    <p style="font-size:.9rem;color:var(--ink-muted);line-height:1.85;max-width:360px">Relocating to Birmingham / London, UK in 2025. Co-director of a registered UK company. Available full-time and contract.</p>
+  </div>
+</section>
+
+<section class="s-cream pad">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start" class="r">
+    <div>
+      <span class="eyebrow-ink">What Rosario Brings</span>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.75rem);font-weight:400;color:var(--ink);line-height:1;margin-bottom:1rem">Not a list of skills.<br/><em style="color:var(--teal)">A compounding set of capabilities.</em></h2>
+      <p style="font-size:.9rem;line-height:1.85;color:var(--ink-muted);margin-bottom:1.5rem">Most professionals give you one thing. Rosario gives you four that work together — and that combination changes what's possible at an organisational level.</p>
+      <div class="value-list">
+        <div class="vi"><div class="vi-title">Systems diagnosis at operational level</div><div class="vi-desc">First Class Physics + a decade of business-building. Fewer costly direction changes. Better decisions from week one.</div></div>
+        <div class="vi"><div class="vi-title">Brand, CX, and communications leadership</div><div class="vi-desc">Nine years building brands, customer journeys, and communication systems across African and UK markets.</div></div>
+        <div class="vi"><div class="vi-title">Product and UX thinking</div><div class="vi-desc">MIT UX-trained and Certified Product Designer. Bridges product, design, and business conversations at senior level.</div></div>
+        <div class="vi"><div class="vi-title">Commercial and financial literacy</div><div class="vi-desc">Certified in GFA, Project Management, and GRC. Fortinet NSE cybersecurity. Every recommendation connects to a measurable outcome.</div></div>
+        <div class="vi"><div class="vi-title">Cross-cultural market intelligence</div><div class="vi-desc">Nigeria, Equatorial Guinea, UK. Irreplaceable for organisations with African market exposure or ambitions.</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="uk-note">
+        <div style="font-size:1.1rem;font-weight:400;color:var(--cream);margin-bottom:.65rem;font-family:'DM Serif Display',serif">🇬🇧 Already operating in the UK market</div>
+        <p style="font-size:.85rem;line-height:1.75;color:rgba(240,235,225,.7)">Rosario is co-director of Outhbox UK — a registered UK technology company with an active client in health and social care. He is not planning to enter the UK market. He already has.</p>
+      </div>
+      <span class="eyebrow-ink" style="margin-top:.25rem">Roles Suited For</span>
+      <div class="roles-grid" style="margin-top:1.25rem;margin-bottom:1.5rem">
+        <div class="rc"><div class="rc-badge">Operations</div><div class="rc-title">Head of Operations / COO-track</div><div class="rc-type">Full-time · Senior level</div><div class="rc-does">Builds operational systems that reduce founder dependency and make growth predictable.</div></div>
+        <div class="rc"><div class="rc-badge">Strategy</div><div class="rc-title">Strategy Consultant</div><div class="rc-type">Contract · Emerging markets</div><div class="rc-does">Diagnoses performance gaps and designs structured growth plans across African and UK markets.</div></div>
+        <div class="rc"><div class="rc-badge">Product</div><div class="rc-title">Product Manager</div><div class="rc-type">Full-time or Contract</div><div class="rc-does">Bridges product vision and business outcomes — especially for African market products.</div></div>
+        <div class="rc"><div class="rc-badge">CX / Brand</div><div class="rc-title">CX Lead / Brand Strategist</div><div class="rc-type">Full-time or Contract</div><div class="rc-does">Builds customer experience systems grounded in commercial outcomes.</div></div>
+      </div>
+      <div class="cv-bar">
+        <div><div style="font-size:.95rem;font-weight:600;color:var(--cream);margin-bottom:.25rem">Full CV available</div><p style="font-size:.78rem;color:rgba(240,235,225,.5)">Download or request a tailored version for your role.</p></div>
+        <a href="https://drive.google.com/file/d/11ZRyiIasd6m1AeuhAcmXV1Za7mkOjEvl/view" target="_blank" class="btn-outline-light" style="white-space:nowrap">Download CV</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="s-dark pad">
-  <div class="cat-pills r">
-    <span class="cat-pill on">All</span>
-    <span class="cat-pill">Nigerian Business & Fintech</span>
-    <span class="cat-pill">Customer Experience</span>
-    <span class="cat-pill">Design & Systems</span>
-    <span class="cat-pill">Operations & Growth</span>
-  </div>
-  <div class="post-grid r">
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--teal) 0%,var(--teal-m) 100%)"></div><div class="pc-body"><div class="pc-cat">Nigerian Business & Fintech</div><div class="pc-title">Why do we have so many fintechs in Nigeria?</div><p class="pc-excerpt">The structural reasons behind Nigeria's fintech boom — and what it means for traditional businesses.</p><div class="pc-meta"><span>December 2024</span><span>6 min</span></div></div></a>
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--ochre) 0%,var(--ochre-l) 100%)"></div><div class="pc-body"><div class="pc-cat">Customer Experience</div><div class="pc-title">CX Design might just be the answer for Nigerian regulatory issues</div><p class="pc-excerpt">How customer experience thinking can turn regulatory friction into competitive advantage.</p><div class="pc-meta"><span>December 2024</span><span>5 min</span></div></div></a>
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--ink-d) 0%,#1A2A2A 100%)"></div><div class="pc-body"><div class="pc-cat">Design & Tools</div><div class="pc-title">Top 6 free AI tools for designers in 2024</div><p class="pc-excerpt">The tools worth actually using — and the ones that aren't worth your time yet.</p><div class="pc-meta"><span>January 2024</span><span>5 min</span></div></div></a>
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--teal-m) 0%,var(--teal-l) 100%)"></div><div class="pc-body"><div class="pc-cat">Operations & Growth</div><div class="pc-title">The real reason most Nigerian SMEs don't scale</div><p class="pc-excerpt">It's not capital. It's not market size. It's a systems problem — and it's more fixable than founders think.</p><div class="pc-meta"><span>Coming soon</span><span>7 min</span></div></div></a>
+  <span class="eyebrow-light">Target Organisations</span>
+  <h2 style="font-size:clamp(1.8rem,3vw,2.75rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:.85rem">The right <em style="color:var(--ochre-l)">kind of organisation</em></h2>
+  <p style="font-size:.9rem;color:var(--muted);max-width:520px;line-height:1.8;margin-bottom:2.5rem">Rosario is particularly valuable at the intersection of emerging markets, development finance, technology, and business growth.</p>
+  <div class="org-grid r">
+    <div class="oi" style="background:rgba(240,235,225,.03);border-color:var(--border)"><div class="oi-name" style="color:var(--cream)">British International Investment (BII)</div><div class="oi-type" style="color:var(--muted)">Development Finance · Africa & South Asia</div></div>
+    <div class="oi" style="background:rgba(240,235,225,.03);border-color:var(--border)"><div class="oi-name" style="color:var(--cream)">Nesta</div><div class="oi-type" style="color:var(--muted)">Innovation · UK / Global programmes</div></div>
+    <div class="oi" style="background:rgba(240,235,225,.03);border-color:var(--border)"><div class="oi-name" style="color:var(--cream)">Dalberg</div><div class="oi-type" style="color:var(--muted)">Strategy consulting · Emerging markets</div></div>
+    <div class="oi" style="background:rgba(240,235,225,.03);border-color:var(--border)"><div class="oi-name" style="color:var(--cream)">Adam Smith International</div><div class="oi-type" style="color:var(--muted)">International development consulting</div></div>
+    <div class="oi" style="background:rgba(240,235,225,.03);border-color:var(--border)"><div class="oi-name" style="color:var(--cream)">Innovate UK</div><div class="oi-type" style="color:var(--muted)">Government innovation agency</div></div>
+    <div class="oi" style="background:rgba(240,235,224,.03);border-color:var(--border)"><div class="oi-name" style="color:var(--cream)">Palladium Group</div><div class="oi-type" style="color:var(--muted)">Strategy & development · Global</div></div>
+    <div class="oi" style="background:rgba(240,235,225,.03);border-color:var(--border)"><div class="oi-name" style="color:var(--cream)">Flutterwave UK</div><div class="oi-type" style="color:var(--muted)">Fintech · Africa-UK corridor</div></div>
+    <div class="oi" style="background:rgba(240,235,225,.03);border-color:var(--border)"><div class="oi-name" style="color:var(--cream)">UK health tech startups</div><div class="oi-type" style="color:var(--muted)">Particularly those with African market exposure</div></div>
   </div>
 </section>
 
 <section class="s-teal pad" style="text-align:center">
-  <h2 style="font-size:clamp(2rem,3.8vw,3.5rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:.85rem">Get Rosario's thinking<br/><em style="color:var(--ochre-l)">in your inbox</em></h2>
-  <p style="font-size:.9rem;color:rgba(240,235,225,.55);max-width:400px;margin:0 auto 2rem;line-height:1.85">Monthly. No fluff. Sharp perspectives on business, design, and growth in African markets.</p>
-  <div style="display:flex;gap:.5rem;max-width:400px;margin:0 auto" class="r">
-    <input type="email" id="nl-input" placeholder="your@email.com" style="flex:1;padding:.85rem 1.15rem;border:1px solid rgba(240,235,225,.15);background:rgba(240,235,225,.08);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.875rem;outline:none"/>
-    <button id="nl-btn" style="background:var(--ochre);color:#fff;border:none;padding:.85rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:all .2s">Subscribe</button>
+  <h2 style="font-size:clamp(2rem,3.8vw,3.5rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:1rem">Interested in <em style="color:var(--ochre-l)">hiring Rosario?</em></h2>
+  <p style="font-size:.9rem;color:rgba(240,235,225,.65);max-width:460px;margin:0 auto 2.5rem;line-height:1.85">Send a message with the role and organisation. Rosario responds to every enquiry personally.</p>
+  <div style="display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap" class="r">
+    <a href="mailto:hello@rosarioanthony.com?subject=Hiring%20Enquiry" class="btn-dark">Send a Hiring Enquiry</a>
+    <a href="https://drive.google.com/file/d/11ZRyiIasd6m1AeuhAcmXV1Za7mkOjEvl/view" target="_blank" class="btn-outline-light">Download CV</a>
   </div>
-  <p style="font-size:.68rem;color:rgba(240,235,225,.28);margin-top:.85rem">No spam. Unsubscribe any time.</p>
-  <script>document.getElementById("nl-btn")?.addEventListener("click",()=>{const i=document.getElementById("nl-input");if(i.value.includes("@")){const b=document.getElementById("nl-btn");b.textContent="✓ Done";i.value="";setTimeout(()=>{b.textContent="Subscribe"},3000)}});</script>
 </section>
 
 <footer class="site-footer">

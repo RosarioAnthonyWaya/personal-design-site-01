@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ideas — Rosario Anthony</title>
+<title>Qate's Kitchen — Rosario Anthony</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
@@ -154,77 +154,72 @@ footer.site-footer{padding:4.5rem 3rem 3rem;background:var(--ink-d);border-top:1
   footer.site-footer{grid-template-columns:1fr}
 }
 
-.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.pc{background:var(--ink);text-decoration:none;display:block;transition:background .2s}
-.pc:hover{background:rgba(240,235,225,.03)}
-.pc-img{aspect-ratio:16/9;overflow:hidden;position:relative}
-.pc-img-inner{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .3s;filter:brightness(.7);display:block}
-.pc:hover .pc-img-inner{transform:scale(1.04);filter:brightness(.9)}
-.pc-body{padding:1.75rem}
-.pc-cat{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre);margin-bottom:.5rem}
-.pc-title{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400;color:var(--cream);line-height:1.3;margin-bottom:.65rem}
-.pc-excerpt{font-size:.8rem;line-height:1.65;color:var(--muted);margin-bottom:.75rem}
-.pc-meta{display:flex;gap:.85rem;font-size:.7rem;color:var(--muted);opacity:.65}
-.cat-pills{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:3rem}
-.cat-pill{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:.3rem .85rem;cursor:pointer;transition:all .2s;background:transparent}
-.cat-pill:hover,.cat-pill.on{background:var(--teal);color:var(--cream);border-color:var(--teal)}
-@media(max-width:1024px){.post-grid{grid-template-columns:1fr}}
+.case-layout{display:grid;grid-template-columns:220px 1fr;gap:5rem;padding:5.5rem 3rem}
+.case-sidebar .cm{margin-bottom:1.75rem}
+.case-sidebar .cm-lbl{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:.45rem}
+.case-sidebar .cm-val{font-size:.85rem;color:var(--cream);font-weight:500}
+.case-sidebar .c-svc{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.2rem .65rem;margin:.18rem .18rem 0 0}
+.case-block{margin-bottom:3rem}
+.case-block-lbl{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:.7rem;display:block}
+.case-block-text{font-size:.95rem;line-height:1.9;color:var(--muted)}
+.case-block-text strong{color:var(--cream);font-weight:500}
+.case-quote{border-left:1px solid var(--ochre);padding:.85rem 1.5rem;margin:2.5rem 0}
+.cq-text{font-family:'DM Serif Display',serif;font-size:1.25rem;font-style:italic;color:var(--cream);line-height:1.6;margin-bottom:.55rem;font-weight:400}
+.cq-attr{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-l)}
+.case-nav{display:flex;align-items:center;justify-content:space-between;padding:1.75rem 3rem;border-top:1px solid var(--border)}
+@media(max-width:1024px){
+  .case-layout{grid-template-columns:1fr;gap:3rem;padding:4rem 1.25rem}
+  .case-nav{padding:1.75rem 1.25rem;flex-direction:column;gap:1rem;text-align:center}
+}
 </style>
 </head>
 <body>
 <nav class="main-nav" id="nav">
-  <a href="../index.html" class="nav-logo">Rosario<em>.</em></a>
+  <a href="../../index.html" class="nav-logo">Rosario<em>.</em></a>
   <ul class="nav-links">
-    <li><a href="../work/index.html">Work</a></li>
-    <li><a href="../speaking/index.html">Speaking</a></li>
-    <li><a href="../hire/index.html">Hire</a></li>
-    <li><a href="../about/index.html">About</a></li>
-    <li><a href="../blog/index.html" class="active">Ideas</a></li>
+    <li><a href="../../work/index.html" class="active">Work</a></li>
+    <li><a href="../../speaking/index.html">Speaking</a></li>
+    <li><a href="../../hire/index.html">Hire</a></li>
+    <li><a href="../../about/index.html">About</a></li>
+    <li><a href="../../blog/index.html">Ideas</a></li>
   </ul>
-  <a href="../index.html#contact" class="nav-cta">Work With Rosario</a>
+  <a href="../../index.html#contact" class="nav-cta">Work With Rosario</a>
   <button class="nav-hamburger" id="hamburger" style="display:none"><span></span><span></span><span></span></button>
 </nav>
 <nav class="mobile-menu" id="mob-menu">
-  <a href="../work/index.html">Work</a>
-  <a href="../speaking/index.html">Speaking</a>
-  <a href="../hire/index.html">Hire</a>
-  <a href="../about/index.html">About</a>
-  <a href="../blog/index.html">Ideas</a>
-  <a href="../index.html#contact" class="mob-cta-link">Work With Rosario →</a>
+  <a href="../../work/index.html">Work</a>
+  <a href="../../speaking/index.html">Speaking</a>
+  <a href="../../hire/index.html">Hire</a>
+  <a href="../../about/index.html">About</a>
+  <a href="../../blog/index.html">Ideas</a>
+  <a href="../../index.html#contact" class="mob-cta-link">Work With Rosario →</a>
 </nav>
 
 <div class="page-band dark">
-  <span class="eyebrow">Ideas</span>
-  <h1 class="page-band-h">Rosario's take on<br/><em>business & growth</em></h1>
-  <p class="page-band-sub">Perspectives on African markets, customer experience, and how businesses actually perform. No filler.</p>
+  <span class="eyebrow">Qate's Kitchen · United Kingdom</span>
+  <h1 class="page-band-h">African food brand built <em>for the UK market</em></h1>
 </div>
-
-<section class="s-dark pad">
-  <div class="cat-pills r">
-    <span class="cat-pill on">All</span>
-    <span class="cat-pill">Nigerian Business & Fintech</span>
-    <span class="cat-pill">Customer Experience</span>
-    <span class="cat-pill">Design & Systems</span>
-    <span class="cat-pill">Operations & Growth</span>
+<div style="background:linear-gradient(135deg,#0E6B6B 0%,#17999A 100%);height:460px;position:relative;overflow:hidden"><img src="https://framerusercontent.com/images/Xzuzlmalp8NlIE3TeUAiPyu7kc.png" style="width:100%;height:100%;object-fit:cover" alt="Qate's Kitchen"/></div>
+<div class="s-dark case-layout">
+  <div class="case-sidebar r">
+    <div class="cm"><div class="cm-lbl">Client</div><div class="cm-val">Qate's Kitchen</div></div>
+    <div class="cm"><div class="cm-lbl">Location</div><div class="cm-val">United Kingdom</div></div>
+    <div class="cm"><div class="cm-lbl">Project type</div><div class="cm-val">Brand Positioning & Visual Strategy</div></div>
+    <div class="cm"><div class="cm-lbl">Services</div><div style="margin-top:.5rem"><span class="c-svc">Brand Positioning</span><span class="c-svc">Visual Identity</span><span class="c-svc">Market Strategy</span><span class="c-svc">Cross-Cultural Brand Architecture</span></div></div>
   </div>
-  <div class="post-grid r">
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--teal) 0%,var(--teal-m) 100%)"></div><div class="pc-body"><div class="pc-cat">Nigerian Business & Fintech</div><div class="pc-title">Why do we have so many fintechs in Nigeria?</div><p class="pc-excerpt">The structural reasons behind Nigeria's fintech boom — and what it means for traditional businesses.</p><div class="pc-meta"><span>December 2024</span><span>6 min</span></div></div></a>
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--ochre) 0%,var(--ochre-l) 100%)"></div><div class="pc-body"><div class="pc-cat">Customer Experience</div><div class="pc-title">CX Design might just be the answer for Nigerian regulatory issues</div><p class="pc-excerpt">How customer experience thinking can turn regulatory friction into competitive advantage.</p><div class="pc-meta"><span>December 2024</span><span>5 min</span></div></div></a>
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--ink-d) 0%,#1A2A2A 100%)"></div><div class="pc-body"><div class="pc-cat">Design & Tools</div><div class="pc-title">Top 6 free AI tools for designers in 2024</div><p class="pc-excerpt">The tools worth actually using — and the ones that aren't worth your time yet.</p><div class="pc-meta"><span>January 2024</span><span>5 min</span></div></div></a>
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--teal-m) 0%,var(--teal-l) 100%)"></div><div class="pc-body"><div class="pc-cat">Operations & Growth</div><div class="pc-title">The real reason most Nigerian SMEs don't scale</div><p class="pc-excerpt">It's not capital. It's not market size. It's a systems problem — and it's more fixable than founders think.</p><div class="pc-meta"><span>Coming soon</span><span>7 min</span></div></div></a>
+  <div class="r">
+    <div class="case-block"><span class="case-block-lbl">The Problem</span><p class="case-block-text">Qate's Kitchen had a strong cultural identity rooted in African food — the authenticity was real, the food was excellent, the story was genuine. But entering the UK market meant navigating a completely different consumer context. The risk was losing the authenticity that made the brand worth knowing, or keeping it so tightly that UK consumers couldn't connect with it.</p></div>
+    <div class="case-block"><span class="case-block-lbl">The Insight</span><p class="case-block-text">This is a false dilemma that destroys many diaspora food brands. They go too British and lose their soul, or stay too African and limit their market. <strong>Authenticity is the brand's commercial advantage — not a risk to be managed.</strong> The job was to express that authenticity in a visual language that UK consumers could recognise and trust.</p></div>
+    <div class="case-block"><span class="case-block-lbl">The Intervention</span><p class="case-block-text">Brand positioning and visual strategy built for cross-border relevance. Rosario drew on his own lived experience across Nigerian and UK contexts — not from the outside, but as someone who has occupied both worlds.</p></div>
+    <div class="case-block"><span class="case-block-lbl">The Outcome</span><p class="case-block-text">A brand that doesn't have to choose between being authentic and being commercial. Positioned to grow in the UK market without diluting the cultural identity that makes Qate's Kitchen worth knowing.</p></div>
+    
   </div>
-</section>
-
-<section class="s-teal pad" style="text-align:center">
-  <h2 style="font-size:clamp(2rem,3.8vw,3.5rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:.85rem">Get Rosario's thinking<br/><em style="color:var(--ochre-l)">in your inbox</em></h2>
-  <p style="font-size:.9rem;color:rgba(240,235,225,.55);max-width:400px;margin:0 auto 2rem;line-height:1.85">Monthly. No fluff. Sharp perspectives on business, design, and growth in African markets.</p>
-  <div style="display:flex;gap:.5rem;max-width:400px;margin:0 auto" class="r">
-    <input type="email" id="nl-input" placeholder="your@email.com" style="flex:1;padding:.85rem 1.15rem;border:1px solid rgba(240,235,225,.15);background:rgba(240,235,225,.08);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.875rem;outline:none"/>
-    <button id="nl-btn" style="background:var(--ochre);color:#fff;border:none;padding:.85rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:all .2s">Subscribe</button>
-  </div>
-  <p style="font-size:.68rem;color:rgba(240,235,225,.28);margin-top:.85rem">No spam. Unsubscribe any time.</p>
-  <script>document.getElementById("nl-btn")?.addEventListener("click",()=>{const i=document.getElementById("nl-input");if(i.value.includes("@")){const b=document.getElementById("nl-btn");b.textContent="✓ Done";i.value="";setTimeout(()=>{b.textContent="Subscribe"},3000)}});</script>
-</section>
+</div>
+<div class="s-dark case-nav">
+  <a href="../../work/dauntless/index.html" class="text-link-light">← Dauntless Foundation</a>
+  <a href="../../work/index.html" class="text-link-light" style="font-size:.65rem">← All Work</a>
+  <span></span>
+</div>
 
 <footer class="site-footer">
   <div>
@@ -235,19 +230,19 @@ footer.site-footer{padding:4.5rem 3rem 3rem;background:var(--ink-d);border-top:1
   <div>
     <div class="fc-head">Navigate</div>
     <div class="fc-links">
-      <a href="../work/index.html">Work</a>
-      <a href="../speaking/index.html">Speaking</a>
-      <a href="../hire/index.html">Hire</a>
-      <a href="../about/index.html">About</a>
-      <a href="../blog/index.html">Ideas</a>
+      <a href="../../work/index.html">Work</a>
+      <a href="../../speaking/index.html">Speaking</a>
+      <a href="../../hire/index.html">Hire</a>
+      <a href="../../about/index.html">About</a>
+      <a href="../../blog/index.html">Ideas</a>
     </div>
   </div>
   <div>
     <div class="fc-head">Work Together</div>
     <div class="fc-links">
       <a href="mailto:hello@rosarioanthony.com">Fix my Business</a>
-      <a href="../speaking/index.html">Book a Talk</a>
-      <a href="../hire/index.html">Hire Rosario</a>
+      <a href="../../speaking/index.html">Book a Talk</a>
+      <a href="../../hire/index.html">Hire Rosario</a>
       <a href="https://wa.me/2348000000000">WhatsApp</a>
     </div>
   </div>

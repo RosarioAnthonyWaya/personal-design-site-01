@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ideas — Rosario Anthony</title>
+<title>Work — Rosario Anthony</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
@@ -154,32 +154,33 @@ footer.site-footer{padding:4.5rem 3rem 3rem;background:var(--ink-d);border-top:1
   footer.site-footer{grid-template-columns:1fr}
 }
 
-.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.pc{background:var(--ink);text-decoration:none;display:block;transition:background .2s}
-.pc:hover{background:rgba(240,235,225,.03)}
-.pc-img{aspect-ratio:16/9;overflow:hidden;position:relative}
-.pc-img-inner{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .3s;filter:brightness(.7);display:block}
-.pc:hover .pc-img-inner{transform:scale(1.04);filter:brightness(.9)}
-.pc-body{padding:1.75rem}
-.pc-cat{font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre);margin-bottom:.5rem}
-.pc-title{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400;color:var(--cream);line-height:1.3;margin-bottom:.65rem}
-.pc-excerpt{font-size:.8rem;line-height:1.65;color:var(--muted);margin-bottom:.75rem}
-.pc-meta{display:flex;gap:.85rem;font-size:.7rem;color:var(--muted);opacity:.65}
-.cat-pills{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:3rem}
-.cat-pill{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:.3rem .85rem;cursor:pointer;transition:all .2s;background:transparent}
-.cat-pill:hover,.cat-pill.on{background:var(--teal);color:var(--cream);border-color:var(--teal)}
-@media(max-width:1024px){.post-grid{grid-template-columns:1fr}}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.wc{background:var(--ink);text-decoration:none;display:block;transition:background .25s;overflow:hidden}
+.wc:hover{background:rgba(240,235,225,.03)}
+.wc-img{position:relative;overflow:hidden;aspect-ratio:16/10}
+.wc-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.4,0,.2,1),filter .4s;filter:brightness(.75)}
+.wc:hover .wc-img img{transform:scale(1.04);filter:brightness(.9)}
+.wc-tag{position:absolute;top:1rem;left:1rem;background:rgba(7,21,21,.75);backdrop-filter:blur(6px);color:var(--cream);padding:.25rem .85rem;font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.wc-body{padding:1.75rem 1.75rem 2rem}
+.wc-client{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre);margin-bottom:.5rem}
+.wc-title{font-family:'DM Serif Display',serif;font-size:1.35rem;font-weight:400;color:var(--cream);line-height:1.2;margin-bottom:.6rem}
+.wc-title em{color:var(--ochre-l)}
+.wc-outcome{font-size:.78rem;color:var(--teal-l);margin-bottom:.5rem;font-weight:500}
+.wc-excerpt{font-size:.8rem;line-height:1.65;color:var(--muted)}
+.wc-read{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-top:1rem;opacity:.55;transition:all .2s}
+.wc:hover .wc-read{opacity:1;gap:.65rem}
+@media(max-width:1024px){.work-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav class="main-nav" id="nav">
   <a href="../index.html" class="nav-logo">Rosario<em>.</em></a>
   <ul class="nav-links">
-    <li><a href="../work/index.html">Work</a></li>
+    <li><a href="../work/index.html" class="active">Work</a></li>
     <li><a href="../speaking/index.html">Speaking</a></li>
     <li><a href="../hire/index.html">Hire</a></li>
     <li><a href="../about/index.html">About</a></li>
-    <li><a href="../blog/index.html" class="active">Ideas</a></li>
+    <li><a href="../blog/index.html">Ideas</a></li>
   </ul>
   <a href="../index.html#contact" class="nav-cta">Work With Rosario</a>
   <button class="nav-hamburger" id="hamburger" style="display:none"><span></span><span></span><span></span></button>
@@ -194,36 +195,30 @@ footer.site-footer{padding:4.5rem 3rem 3rem;background:var(--ink-d);border-top:1
 </nav>
 
 <div class="page-band dark">
-  <span class="eyebrow">Ideas</span>
-  <h1 class="page-band-h">Rosario's take on<br/><em>business & growth</em></h1>
-  <p class="page-band-sub">Perspectives on African markets, customer experience, and how businesses actually perform. No filler.</p>
+  <span class="eyebrow">Selected Work</span>
+  <h1 class="page-band-h">Proof that speaks<br/><em>for itself</em></h1>
+  <p class="page-band-sub">Outcome first. Artifact second. Every project here changed something real about how a business performs.</p>
 </div>
 
-<section class="s-dark pad">
-  <div class="cat-pills r">
-    <span class="cat-pill on">All</span>
-    <span class="cat-pill">Nigerian Business & Fintech</span>
-    <span class="cat-pill">Customer Experience</span>
-    <span class="cat-pill">Design & Systems</span>
-    <span class="cat-pill">Operations & Growth</span>
+<section class="s-dark" style="padding:0">
+  <div class="work-grid r">
+    <a href="chop-chop/index.html" class="wc">
+      <div class="wc-img"><img src="https://framerusercontent.com/images/RC8eayLHnSqn1YzsZyNu7cyilZg.png" alt="Chop Chop"/><span class="wc-tag">Branding & Packaging</span></div>
+      <div class="wc-body"><div class="wc-client">Chop Chop by Nanyaa · Nigeria</div><div class="wc-title">A brand that became the product's <em>best asset</em></div><div class="wc-outcome">Brand became #1 conversation starter</div><p class="wc-excerpt">Great product. Brand that disappeared. Rosario rebuilt the identity, packaging and visual language — turning passive customers into active advocates.</p><span class="wc-read">Read Case Study →</span></div>
+    </a>
+    <a href="sla/index.html" class="wc">
+      <div class="wc-img"><img src="https://framerusercontent.com/images/6UGC1ufoFFJRh1KOBED2uDhauNI.png" alt="SLA"/><span class="wc-tag">Brand Identity</span></div>
+      <div class="wc-body"><div class="wc-client">Syntyche Language Academy · Nigeria</div><div class="wc-title">A school that finally looked like the <em>leader it was</em></div><div class="wc-outcome">Full brand identity system — premium positioning</div><p class="wc-excerpt">SLA was the destination for language education — but the brand said otherwise. A full rebuild closed the gap.</p><span class="wc-read">Read Case Study →</span></div>
+    </a>
+    <a href="dauntless/index.html" class="wc">
+      <div class="wc-img" style="background:linear-gradient(135deg,var(--ink-d) 0%,var(--teal) 100%);display:flex;align-items:center;justify-content:center;aspect-ratio:16/10"><span style="font-size:.7rem;color:rgba(240,235,225,.3);letter-spacing:.1em;text-transform:uppercase">Dauntless Foundation</span><span class="wc-tag">Web Design</span></div>
+      <div class="wc-body"><div class="wc-client">Dauntless Widows Foundation · Nigeria</div><div class="wc-title">A community finally had a <em>home online</em></div><div class="wc-outcome">Foundation's first full digital presence</div><p class="wc-excerpt">A foundation doing real work with no digital presence to match. Rosario walked with the founders through every decision.</p><span class="wc-read">Read Case Study →</span></div>
+    </a>
+    <a href="qates/index.html" class="wc">
+      <div class="wc-img"><img src="https://framerusercontent.com/images/Xzuzlmalp8NlIE3TeUAiPyu7kc.png" alt="Qates Kitchen"/><span class="wc-tag">Brand Strategy · UK</span></div>
+      <div class="wc-body"><div class="wc-client">Qate's Kitchen · United Kingdom</div><div class="wc-title">African food brand built <em>for the UK market</em></div><div class="wc-outcome">Cross-border brand positioning</div><p class="wc-excerpt">Entering the UK market without losing cultural identity. Rosario drew on his lived experience across both contexts.</p><span class="wc-read">Read Case Study →</span></div>
+    </a>
   </div>
-  <div class="post-grid r">
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--teal) 0%,var(--teal-m) 100%)"></div><div class="pc-body"><div class="pc-cat">Nigerian Business & Fintech</div><div class="pc-title">Why do we have so many fintechs in Nigeria?</div><p class="pc-excerpt">The structural reasons behind Nigeria's fintech boom — and what it means for traditional businesses.</p><div class="pc-meta"><span>December 2024</span><span>6 min</span></div></div></a>
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--ochre) 0%,var(--ochre-l) 100%)"></div><div class="pc-body"><div class="pc-cat">Customer Experience</div><div class="pc-title">CX Design might just be the answer for Nigerian regulatory issues</div><p class="pc-excerpt">How customer experience thinking can turn regulatory friction into competitive advantage.</p><div class="pc-meta"><span>December 2024</span><span>5 min</span></div></div></a>
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--ink-d) 0%,#1A2A2A 100%)"></div><div class="pc-body"><div class="pc-cat">Design & Tools</div><div class="pc-title">Top 6 free AI tools for designers in 2024</div><p class="pc-excerpt">The tools worth actually using — and the ones that aren't worth your time yet.</p><div class="pc-meta"><span>January 2024</span><span>5 min</span></div></div></a>
-    <a href="#" class="pc"><div class="pc-img" style="background:linear-gradient(135deg,var(--teal-m) 0%,var(--teal-l) 100%)"></div><div class="pc-body"><div class="pc-cat">Operations & Growth</div><div class="pc-title">The real reason most Nigerian SMEs don't scale</div><p class="pc-excerpt">It's not capital. It's not market size. It's a systems problem — and it's more fixable than founders think.</p><div class="pc-meta"><span>Coming soon</span><span>7 min</span></div></div></a>
-  </div>
-</section>
-
-<section class="s-teal pad" style="text-align:center">
-  <h2 style="font-size:clamp(2rem,3.8vw,3.5rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:.85rem">Get Rosario's thinking<br/><em style="color:var(--ochre-l)">in your inbox</em></h2>
-  <p style="font-size:.9rem;color:rgba(240,235,225,.55);max-width:400px;margin:0 auto 2rem;line-height:1.85">Monthly. No fluff. Sharp perspectives on business, design, and growth in African markets.</p>
-  <div style="display:flex;gap:.5rem;max-width:400px;margin:0 auto" class="r">
-    <input type="email" id="nl-input" placeholder="your@email.com" style="flex:1;padding:.85rem 1.15rem;border:1px solid rgba(240,235,225,.15);background:rgba(240,235,225,.08);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.875rem;outline:none"/>
-    <button id="nl-btn" style="background:var(--ochre);color:#fff;border:none;padding:.85rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:all .2s">Subscribe</button>
-  </div>
-  <p style="font-size:.68rem;color:rgba(240,235,225,.28);margin-top:.85rem">No spam. Unsubscribe any time.</p>
-  <script>document.getElementById("nl-btn")?.addEventListener("click",()=>{const i=document.getElementById("nl-input");if(i.value.includes("@")){const b=document.getElementById("nl-btn");b.textContent="✓ Done";i.value="";setTimeout(()=>{b.textContent="Subscribe"},3000)}});</script>
 </section>
 
 <footer class="site-footer">

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Speaking — Rosario Anthony</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#0B1F1F;--ink-d:#071515;
+  --teal:#0B4F4F;--teal-m:#0E6B6B;--teal-l:#17999A;
+  --cream:#F0EBE1;--cream-d:#E4DDD0;
+  --ochre:#C8872A;--ochre-l:#DFA84E;
+  --muted:rgba(240,235,225,0.48);
+  --border:rgba(240,235,225,0.1);--border-m:rgba(240,235,225,0.2);
+  --ink-muted:rgba(11,31,31,0.55);
+  --ink-border:rgba(11,31,31,0.12);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+h1,h2,h3,h4{font-family:'DM Serif Display',serif;line-height:1.05;letter-spacing:-.01em}
+em{font-style:italic}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* ── SHARED TYPE ── */
+.eyebrow{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ochre);margin-bottom:1.1rem;display:block}
+.eyebrow-light{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,135,42,.7);margin-bottom:1.1rem;display:block}
+.eyebrow-ink{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1.1rem;display:block}
+
+/* ── BUTTONS ── */
+.btn-dark{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--cream);padding:.85rem 2.25rem;transition:all .25s;display:inline-block}
+.btn-dark:hover{background:var(--ochre-l);color:#fff}
+.btn-outline-light{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);border:1px solid var(--border-m);padding:.85rem 2.25rem;transition:all .25s;display:inline-block}
+.btn-outline-light:hover{border-color:var(--cream);background:rgba(240,235,225,.07)}
+.btn-teal{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);background:var(--teal);padding:.85rem 2.25rem;transition:all .25s;display:inline-block}
+.btn-teal:hover{background:var(--teal-m)}
+.btn-outline-ink{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink-border);padding:.85rem 2.25rem;transition:all .25s;display:inline-block}
+.btn-outline-ink:hover{border-color:var(--teal);color:var(--teal)}
+.text-link-light{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);display:inline-flex;align-items:center;gap:.55rem;border-bottom:1px solid var(--border-m);padding-bottom:.3rem;transition:all .2s}
+.text-link-light:hover{color:var(--ochre-l);border-color:var(--ochre);gap:.85rem}
+.text-link-ink{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);display:inline-flex;align-items:center;gap:.55rem;border-bottom:1px solid var(--ink-border);padding-bottom:.3rem;transition:all .2s}
+.text-link-ink:hover{color:var(--teal);border-color:var(--teal);gap:.85rem}
+
+/* ── NAV ── */
+nav.main-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;transition:all .4s}
+nav.main-nav.solid{background:rgba(7,21,21,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:1rem 3rem}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--cream);letter-spacing:.02em}
+.nav-logo em{color:var(--ochre-l);font-style:italic}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.72rem;font-weight:500;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-cta{font-size:.72rem;font-weight:600;color:var(--ink);background:var(--cream);padding:.55rem 1.5rem;letter-spacing:.06em;text-transform:uppercase;transition:all .2s}
+.nav-cta:hover{background:var(--ochre-l);color:#fff}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.35rem}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--cream);border-radius:1px;transition:all .3s}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--ink-d);z-index:199;padding:6rem 2.5rem 3rem;flex-direction:column}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'DM Serif Display',serif;font-size:2.5rem;font-weight:400;color:var(--cream);padding:.6rem 0;border-bottom:1px solid var(--border);display:block;transition:color .2s}
+.mobile-menu a:hover{color:var(--ochre-l)}
+.mob-cta-link{margin-top:1.5rem;font-family:'DM Sans',sans-serif!important;font-size:.8rem!important;font-weight:600!important;letter-spacing:.1em;text-transform:uppercase;color:var(--ochre-l)!important;border-bottom:none!important}
+
+/* ── PAGE HEADER BAND ── */
+.page-band{padding:9rem 3rem 5rem;background:var(--teal)}
+.page-band.dark{background:var(--ink-d)}
+.page-band .eyebrow{color:rgba(200,135,42,.75)}
+.page-band-h{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:1rem}
+.page-band-h em{color:var(--ochre-l)}
+.page-band-sub{font-size:.95rem;color:rgba(240,235,225,.55);max-width:520px;line-height:1.8}
+
+/* ── SECTIONS ── */
+.s-dark{background:var(--ink);color:var(--cream)}
+.s-ink{background:var(--ink-d);color:var(--cream)}
+.s-teal{background:var(--teal);color:var(--cream)}
+.s-cream{background:var(--cream);color:var(--ink)}
+.s-cream .eyebrow-ink{color:var(--teal)}
+.s-cream h2,.s-cream h3{color:var(--ink)}
+.s-cream h2 em,.s-cream h3 em{color:var(--teal)}
+.pad{padding:5.5rem 3rem}
+.pad-sm{padding:4rem 3rem}
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+.divider-ink{border:none;border-top:1px solid var(--ink-border);margin:0}
+
+/* ── TIMELINE ── */
+.tl{position:relative;padding-left:2rem}
+.tl::before{content:'';position:absolute;left:.5rem;top:.4rem;bottom:.4rem;width:1px;background:linear-gradient(to bottom,var(--teal),transparent)}
+.tl-item{position:relative;margin-bottom:2rem}
+.tl-dot{position:absolute;left:-1.6rem;top:.35rem;width:8px;height:8px;border-radius:50%;background:var(--teal);border:2px solid var(--ink)}
+.tl-date{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-l);margin-bottom:.2rem}
+.tl-title{font-size:.95rem;font-weight:600;color:var(--cream);margin-bottom:.1rem}
+.tl-org{font-size:.82rem;color:var(--teal-l);font-weight:500}
+.tl-desc{font-size:.8rem;color:var(--muted);margin-top:.3rem;line-height:1.6}
+/* Cream timeline */
+.s-cream .tl::before{background:linear-gradient(to bottom,var(--teal),transparent)}
+.s-cream .tl-dot{background:var(--teal);border-color:var(--cream)}
+.s-cream .tl-title{color:var(--ink)}
+.s-cream .tl-org{color:var(--teal)}
+.s-cream .tl-desc{color:var(--ink-muted)}
+
+/* ── CONTACT PATHS ── */
+.cp-list{display:flex;flex-direction:column}
+.cp{display:block;padding:1.75rem 1.5rem;border-bottom:1px solid var(--border);text-decoration:none;border-left:2px solid transparent;transition:all .2s}
+.cp:first-child{border-top:1px solid var(--border)}
+.cp:hover{background:rgba(240,235,225,.03);border-left-color:var(--ochre)}
+.cp-lbl{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:.4rem}
+.cp-title{font-family:'DM Serif Display',serif;font-size:1.3rem;font-weight:400;color:var(--cream);margin-bottom:.25rem}
+.cp-desc{font-size:.78rem;color:var(--muted)}
+.cp-arr{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-l);margin-top:.65rem;display:block;opacity:.6;transition:opacity .2s}
+.cp:hover .cp-arr{opacity:1}
+
+/* ── FOOTER ── */
+footer.site-footer{padding:4.5rem 3rem 3rem;background:var(--ink-d);border-top:1px solid var(--border);display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.75rem;font-weight:400;color:var(--cream);margin-bottom:.7rem}
+.footer-logo em{color:var(--ochre-l)}
+.footer-tagline{font-size:.78rem;color:var(--muted);line-height:1.65;max-width:250px}
+.footer-copy{font-size:.65rem;color:rgba(240,235,225,.18);margin-top:2.5rem}
+.fc-head{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:1.25rem}
+.fc-links{display:flex;flex-direction:column;gap:.6rem}
+.fc-links a{font-size:.8rem;color:var(--muted);transition:color .2s}
+.fc-links a:hover{color:var(--cream)}
+
+/* ── MARQUEE ── */
+.marquee-wrap{padding:1.4rem 0;border-bottom:1px solid var(--border);overflow:hidden;background:var(--ink)}
+.marquee-track{display:flex;overflow:hidden;white-space:nowrap}
+.marquee-inner{display:flex;align-items:center;animation:marquee 32s linear infinite;flex-shrink:0}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.marquee-wrap:hover .marquee-inner{animation-play-state:paused}
+.logo-item{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,235,225,.32);padding:0 2.25rem;white-space:nowrap;transition:color .2s}
+.logo-item:hover{color:rgba(240,235,225,.65)}
+.logo-sep{color:var(--ochre-l);opacity:.3;font-size:.55rem;flex-shrink:0}
+
+/* ── REVEAL ── */
+.r{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.r.in{opacity:1;transform:none}
+.r1{transition-delay:.08s}.r2{transition-delay:.18s}.r3{transition-delay:.28s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  nav.main-nav{padding:1rem 1.25rem}
+  nav.main-nav.solid{padding:.85rem 1.25rem}
+  .nav-links,.nav-cta{display:none!important}
+  .nav-hamburger{display:flex!important}
+  .pad,.pad-sm,.page-band{padding-left:1.25rem;padding-right:1.25rem}
+  .page-band{padding-top:7rem;padding-bottom:3.5rem}
+  footer.site-footer{grid-template-columns:1fr 1fr;gap:2rem;padding:3rem 1.25rem 2rem}
+}
+@media(max-width:480px){
+  footer.site-footer{grid-template-columns:1fr}
+}
+
+.sg-wrap{border-radius:0;overflow:hidden;position:relative;background:var(--ink-d);margin-bottom:1.5rem}
+.sg-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.sg-slide{min-width:100%;aspect-ratio:4/3;position:relative;flex-shrink:0}
+.sg-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.sg-cap{position:absolute;bottom:0;left:0;right:0;padding:1rem 1.5rem;background:linear-gradient(to top,rgba(7,21,21,.8),transparent);font-size:.68rem;font-weight:600;color:rgba(240,235,225,.75);letter-spacing:.06em;text-transform:uppercase}
+.sg-controls{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+.sg-arrows{display:flex;gap:.5rem}
+.sg-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--ink-border);background:var(--cream);color:var(--ink);cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.sg-btn:hover{background:var(--teal);border-color:var(--teal);color:var(--cream)}
+.sg-dots{display:flex;gap:.4rem;align-items:center}
+.sg-dot{width:6px;height:6px;border-radius:50%;background:var(--ink-border);cursor:pointer;transition:all .2s}
+.sg-dot.on{background:var(--teal);width:18px;border-radius:3px}
+.topic-list{display:flex;flex-direction:column;border-top:1px solid var(--border)}
+.topic{padding:1.5rem 0;border-bottom:1px solid var(--border);cursor:default;transition:padding .2s}
+.topic:hover{padding-left:.75rem}
+.topic-n{font-size:.65rem;color:var(--ochre-l);font-family:'DM Serif Display',serif;margin-bottom:.4rem}
+.topic-title{font-family:'DM Serif Display',serif;font-size:1.1rem;font-weight:400;color:var(--cream);margin-bottom:.3rem}
+.topic-sub{font-size:.78rem;color:var(--muted)}
+.topic-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
+.topic-tag{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.18rem .6rem}
+.appear-item{display:flex;gap:1.25rem;padding:1.25rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.appear-icon{width:44px;height:44px;background:rgba(240,235,225,.06);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.appear-title{font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:.2rem}
+.appear-meta{font-size:.75rem;color:var(--muted)}
+.appear-badge{display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--teal);color:var(--cream);padding:.15rem .55rem;margin-left:.5rem;vertical-align:middle}
+.bio-box{background:rgba(240,235,225,.04);border:1px solid var(--border);padding:1.75rem;margin-top:1.5rem}
+.bio-lbl{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre);margin-bottom:.85rem}
+.bio-text{font-size:.88rem;line-height:1.78;color:var(--muted)}
+.bio-copy{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-l);margin-top:.85rem;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;transition:gap .2s}
+.bio-copy:hover{gap:.65rem}
+.booking-box{background:var(--teal);padding:2.75rem;margin-top:1.5rem}
+.booking-h{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--cream);margin-bottom:.75rem;line-height:1.2}
+.booking-body{font-size:.85rem;line-height:1.75;color:rgba(240,235,225,.65);margin-bottom:1.75rem}
+@media(max-width:1024px){.two-col-sp{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body>
+<nav class="main-nav" id="nav">
+  <a href="../index.html" class="nav-logo">Rosario<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="../work/index.html">Work</a></li>
+    <li><a href="../speaking/index.html" class="active">Speaking</a></li>
+    <li><a href="../hire/index.html">Hire</a></li>
+    <li><a href="../about/index.html">About</a></li>
+    <li><a href="../blog/index.html">Ideas</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Work With Rosario</a>
+  <button class="nav-hamburger" id="hamburger" style="display:none"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-menu" id="mob-menu">
+  <a href="../work/index.html">Work</a>
+  <a href="../speaking/index.html">Speaking</a>
+  <a href="../hire/index.html">Hire</a>
+  <a href="../about/index.html">About</a>
+  <a href="../blog/index.html">Ideas</a>
+  <a href="../index.html#contact" class="mob-cta-link">Work With Rosario →</a>
+</nav>
+
+<div class="page-band">
+  <span class="eyebrow">Speaking</span>
+  <h1 class="page-band-h">Ideas worth<br/><em>a stage</em></h1>
+  <p class="page-band-sub">TEDx speaker on business growth, design thinking, and African entrepreneurship. Sharp perspective — not a slide deck performance.</p>
+</div>
+
+<section class="s-dark pad">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start" class="two-col-sp r">
+    <div>
+      <span class="eyebrow-light">Gallery</span>
+      <div class="sg-wrap">
+        <div class="sg-track" id="sg-track">
+          <div class="sg-slide"><img src="../images/speaking-stage.jpg" alt="BoltzRoom Session"/><div class="sg-cap">BoltzRoom Strategy Session · Nigeria</div></div>
+          <div class="sg-slide"><img src="../images/speaking-secondary.jpg" alt="Workshop"/><div class="sg-cap">Workshop Facilitation · Nigeria</div></div>
+          <div class="sg-slide"><img src="../images/about-preview.jpg" alt="Masterclass"/><div class="sg-cap">Strategy Masterclass · Lagos</div></div>
+          <div class="sg-slide"><img src="../images/video-thumb.jpg" alt="Live session"/><div class="sg-cap">BoltzRoom Live Session</div></div>
+        </div>
+      </div>
+      <div class="sg-controls">
+        <div class="sg-dots" id="sg-dots"></div>
+        <div class="sg-arrows">
+          <button class="sg-btn" onclick="sgMove(-1)">←</button>
+          <button class="sg-btn" onclick="sgMove(1)">→</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow-light">Speaker Profile</span>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.75rem);font-weight:400;color:var(--cream);line-height:1.05;margin-bottom:1rem">A speaker who makes<br/><em style="color:var(--ochre-l)">rooms think differently</em></h2>
+      <p style="font-size:.9rem;line-height:1.85;color:var(--muted);margin-bottom:1.25rem">Rosario's talks draw on his Physics background, decade of business-building across Africa and the UK, and proprietary frameworks used by real businesses. He doesn't perform — he diagnoses, provokes, and equips audiences with tools they can use the next day.</p>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
+        <span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.28rem .85rem">TEDx Speaker</span>
+        <span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.28rem .85rem">Nigeria & UK</span>
+        <span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.28rem .85rem">Virtual & In-Person</span>
+      </div>
+      <div class="bio-box">
+        <div class="bio-lbl">Ready-to-use speaker bio</div>
+        <div class="bio-text" id="bio-text">Rosario Anthony is a growth strategist, systems builder, and TEDx speaker working at the intersection of business performance, design thinking, and African entrepreneurship. Co-founder of Boltzmenn and Outhbox UK, he has spent nearly a decade helping founder-led businesses fix operational leaks and scale with structure. A First Class Physics graduate and MIT UX-trained designer, Rosario brings analytical rigour, creative craft, and commercial intelligence to every stage he stands on.</div>
+        <div class="bio-copy" onclick="navigator.clipboard.writeText(document.getElementById('bio-text').textContent).then(()=>{this.textContent='✓ Copied'});setTimeout(()=>{this.innerHTML='⎘ Copy bio'},2200)">⎘ Copy bio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-cream pad">
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:6rem;align-items:start" class="two-col-sp r">
+    <div>
+      <span class="eyebrow-ink">Signature Topics</span>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.75rem);font-weight:400;color:var(--ink);line-height:1;margin-bottom:2rem">What Rosario<br/><em style="color:var(--teal)">speaks about</em></h2>
+      <div class="topic-list">
+        <div class="topic"><div class="topic-n">01</div><div class="topic-title">Why businesses fail at customer experience</div><div class="topic-sub">Structural reasons — and the S.E.E. Them™ framework to fix it</div><div class="topic-tags"><span class="topic-tag">Keynote</span><span class="topic-tag">Workshop</span><span class="topic-tag">45–60 min</span></div></div>
+        <div class="topic"><div class="topic-n">02</div><div class="topic-title">Design thinking as a growth tool for African SMEs</div><div class="topic-sub">Practical, not theoretical — with real market examples</div><div class="topic-tags"><span class="topic-tag">Keynote</span><span class="topic-tag">Masterclass</span><span class="topic-tag">45–90 min</span></div></div>
+        <div class="topic"><div class="topic-n">03</div><div class="topic-title">From idea to impact: building businesses that scale</div><div class="topic-sub">The systems behind sustainable African business performance</div><div class="topic-tags"><span class="topic-tag">Keynote</span><span class="topic-tag">Panel</span><span class="topic-tag">30–60 min</span></div></div>
+        <div class="topic"><div class="topic-n">04</div><div class="topic-title">The fintech explosion in Nigeria</div><div class="topic-sub">What it means for traditional businesses trying to compete</div><div class="topic-tags"><span class="topic-tag">Panel</span><span class="topic-tag">30–45 min</span></div></div>
+        <div class="topic"><div class="topic-n">05</div><div class="topic-title">Physics, design, and solving hard business problems</div><div class="topic-sub">A different way of thinking about what's actually wrong</div><div class="topic-tags"><span class="topic-tag">Keynote</span><span class="topic-tag">45–60 min</span></div></div>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow-ink">Past Appearances</span>
+      <div>
+        <div class="appear-item"><div class="appear-icon">🎤</div><div><div class="appear-title" style="color:var(--ink)">TEDxBauchi <span class="appear-badge">TEDx</span></div><div class="appear-meta" style="color:var(--ink-muted)">August 2019 · Bauchi · Economic Empowerment & Problem-Solving Mindset in Africa</div></div></div>
+        <div class="appear-item"><div class="appear-icon">📋</div><div><div class="appear-title" style="color:var(--ink)">TEDxGwallameji — Curator <span class="appear-badge">TEDx</span></div><div class="appear-meta" style="color:var(--ink-muted)">January 2018 · Bauchi · Curated and led the full event programme</div></div></div>
+        <div class="appear-item"><div class="appear-icon">🏢</div><div><div class="appear-title" style="color:var(--ink)">BoltzRoom Strategy Sessions</div><div class="appear-meta" style="color:var(--ink-muted)">Quarterly · Nigeria · Founder & Host · Strategy, accountability, community</div></div></div>
+        <div class="appear-item"><div class="appear-icon">🎓</div><div><div class="appear-title" style="color:var(--ink)">Badagry Business Summit</div><div class="appear-meta" style="color:var(--ink-muted)">2025 · Badagry · Speaker · Made To Grow: Building the Next Big Business</div></div></div>
+        <div class="appear-item"><div class="appear-icon">✏️</div><div><div class="appear-title" style="color:var(--ink)">Design Factory — Training Programme</div><div class="appear-meta" style="color:var(--ink-muted)">Ongoing · Nigeria · Founder · Practical design for African creatives</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-dark pad">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start" class="two-col-sp r">
+    <div>
+      <span class="eyebrow-light">Available formats</span>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.75rem);font-weight:400;color:var(--cream);line-height:1;margin-bottom:1.5rem">Book Rosario<br/>for your <em style="color:var(--ochre-l)">next event</em></h2>
+      <p style="font-size:.9rem;line-height:1.85;color:var(--muted);margin-bottom:2rem">Available for startup summits, corporate conferences, university entrepreneurship weeks, and accelerator demo days. In-person across Nigeria, Equatorial Guinea, and the UK. Virtual globally.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem">
+        <span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.28rem .85rem">Keynote</span>
+        <span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.28rem .85rem">Panel</span>
+        <span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.28rem .85rem">Masterclass</span>
+        <span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.28rem .85rem">Workshop</span>
+        <span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.28rem .85rem">Corporate Training</span>
+        <span style="font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-l);background:rgba(14,107,107,.15);padding:.28rem .85rem">Podcast Guest</span>
+      </div>
+    </div>
+    <div>
+      <div class="booking-box">
+        <div class="booking-h">Make a speaking enquiry</div>
+        <p class="booking-body">Rosario reads every enquiry personally. Include your event date, audience size, and topic area for the fastest response.</p>
+        <a href="mailto:hello@rosarioanthony.com?subject=Speaking%20Enquiry" class="btn-dark">Send Enquiry →</a>
+      </div>
+      <div style="background:rgba(240,235,225,.04);border:1px solid var(--border);padding:1.35rem;display:flex;align-items:center;gap:1rem;margin-top:1rem">
+        <div style="font-size:1.5rem;flex-shrink:0">📄</div>
+        <div><div style="font-size:.88rem;font-weight:600;color:var(--cream);margin-bottom:.2rem">Speaker Kit</div><p style="font-size:.75rem;color:var(--muted)">Bio, headshot, topics & requirements — ready for your event team.</p></div>
+        <a href="mailto:hello@rosarioanthony.com?subject=Speaker%20Kit%20Request" style="margin-left:auto;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ochre-l);white-space:nowrap;border-bottom:1px solid rgba(223,168,78,.3);padding-bottom:.15rem">Request →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var cur=0;var slides=document.querySelectorAll('.sg-slide');var dots=document.getElementById('sg-dots');
+  if(!slides.length)return;
+  slides.forEach(function(_,i){var d=document.createElement('div');d.className='sg-dot'+(i===0?' on':'');d.onclick=function(){sgGo(i)};dots.appendChild(d)});
+  window.sgMove=function(dir){sgGo(cur+dir)};
+  window.sgGo=function(n){cur=(n+slides.length)%slides.length;document.getElementById('sg-track').style.transform='translateX(-'+cur*100+'%)';document.querySelectorAll('.sg-dot').forEach(function(d,i){d.className='sg-dot'+(i===cur?' on':'')})};
+  setInterval(function(){sgGo(cur+1)},5000);
+})();
+</script>
+
+<footer class="site-footer">
+  <div>
+    <div class="footer-logo">Rosario <em>Anthony.</em></div>
+    <p class="footer-tagline">Growth Strategist · Systems Builder · TEDx Speaker · Co-founder, Boltzmenn & Outhbox UK</p>
+    <div class="footer-copy">© 2026 Rosario Anthony Waya. All rights reserved.</div>
+  </div>
+  <div>
+    <div class="fc-head">Navigate</div>
+    <div class="fc-links">
+      <a href="../work/index.html">Work</a>
+      <a href="../speaking/index.html">Speaking</a>
+      <a href="../hire/index.html">Hire</a>
+      <a href="../about/index.html">About</a>
+      <a href="../blog/index.html">Ideas</a>
+    </div>
+  </div>
+  <div>
+    <div class="fc-head">Work Together</div>
+    <div class="fc-links">
+      <a href="mailto:hello@rosarioanthony.com">Fix my Business</a>
+      <a href="../speaking/index.html">Book a Talk</a>
+      <a href="../hire/index.html">Hire Rosario</a>
+      <a href="https://wa.me/2348000000000">WhatsApp</a>
+    </div>
+  </div>
+  <div>
+    <div class="fc-head">Connect</div>
+    <div class="fc-links">
+      <a href="mailto:hello@rosarioanthony.com">hello@rosarioanthony.com</a>
+      <a href="https://www.youtube.com/@AnthonyWaya" target="_blank">YouTube</a>
+      <a href="https://drive.google.com/file/d/11ZRyiIasd6m1AeuhAcmXV1Za7mkOjEvl/view" target="_blank">Download CV</a>
+    </div>
+  </div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target)}})},{threshold:.07});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',scrollY>60));
+function setNav(){const m=window.innerWidth<1024;const hb=document.getElementById('hamburger');const nl=document.querySelector('.nav-links');const nc=document.querySelector('.nav-cta');if(hb)hb.style.display=m?'flex':'none';if(nl)nl.style.display=m?'none':'flex';if(nc)nc.style.display=m?'none':'';}
+setNav();window.addEventListener('resize',setNav);
+const hb=document.getElementById('hamburger');const mob=document.getElementById('mob-menu');
+if(hb)hb.addEventListener('click',()=>{const o=!mob.classList.contains('open');mob.classList.toggle('open',o);hb.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';});
+const t=document.getElementById('ms-track');if(t){let d=false,sx=0,sl=0;t.addEventListener('mousedown',e=>{d=true;sx=e.pageX-t.offsetLeft;sl=t.scrollLeft});t.addEventListener('mouseleave',()=>d=false);t.addEventListener('mouseup',()=>d=false);t.addEventListener('mousemove',e=>{if(!d)return;e.preventDefault();t.scrollLeft=sl-(e.pageX-t.offsetLeft-sx)*1.4});}
+</script>
+</body>
+</html>
